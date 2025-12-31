@@ -57,7 +57,7 @@ export default function HeroSection() {
             {/* Hero Image */}
             <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] lg:h-[500px] rounded-[12px] md:rounded-[16px] overflow-hidden shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
               <Image
-                src="/images/hero-market.jpg"
+                src="/images/A vibrant, multicultural group of friends shopping at a bustling outdoor local market, smiling and interacting with vendors, cinematic style.png"
                 alt="A vibrant, multicultural group of friends shopping at a bustling outdoor local market"
                 fill
                 className="object-cover"
