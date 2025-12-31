@@ -19,8 +19,8 @@ export default function Home() {
         <HeroSection />
         <VisionSection />
         <WhyAulaxSection />
-        <NominateSection />
         <VideoShowcaseSection />
+        <NominateSection />
         <PartnershipSection />
         <ForBusinessSection />
         <ConvenientShoppingSection />
