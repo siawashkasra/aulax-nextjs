@@ -1,189 +1,143 @@
 import Link from "next/link";
 
-// Icons
-const StoreIcon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="#006a4e"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-    <polyline points="9 22 9 12 15 12 15 22" />
+// Checkmark icon
+const CheckIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.667 5L7.5 14.167 3.333 10"
+      stroke="#006a4e"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
-const HeartIcon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="#006a4e"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-  </svg>
-);
-
-const GiftIcon = () => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="#006a4e"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <polyline points="20 12 20 22 4 22 4 12" />
-    <rect x="2" y="7" width="20" height="5" />
-    <line x1="12" y1="22" x2="12" y2="7" />
-    <path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z" />
-    <path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" />
+// Arrow icon
+const ArrowIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+    <path
+      d="M3.75 9H14.25M14.25 9L9 3.75M14.25 9L9 14.25"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
 export default function NominateSection() {
   return (
-    <section
-      id="nominate"
-      className="px-[24px] md:px-[40px] lg:px-[80px] py-[48px] md:py-[64px] lg:py-[96px] relative overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(151deg, rgba(161, 255, 194, 0.20) 1.44%, rgba(207, 250, 254, 0.30) 100%)",
-      }}
-    >
-      <div className="max-w-[1280px] mx-auto px-0 md:px-[24px]">
-        <div className="flex flex-col lg:flex-row items-center gap-[32px] md:gap-[48px] lg:gap-[64px]">
+    <section className="px-[80px] py-[96px] bg-white">
+      <div className="max-w-[1280px] mx-auto px-[24px]">
+        <div className="flex gap-[64px] items-center justify-center">
           {/* Left Content */}
-          <div className="flex-1 flex flex-col gap-[24px] md:gap-[32px]">
-            {/* Header */}
-            <div className="flex flex-col gap-[12px] md:gap-[16px]">
-              <h2 className="font-bold text-[32px] md:text-[40px] lg:text-[48px] leading-[36px] md:leading-[44px] lg:leading-[48px] text-[#1e293b]">
-                Know a Great Local Shop?
-              </h2>
-              <p className="text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] text-[#4b5563] max-w-[600px]">
-                Help your favourite local businesses get discovered. Nominate
-                them to join Aulax and we&apos;ll reach out to bring them on
-                board.
-              </p>
-            </div>
+          <div className="flex-1 flex flex-col gap-[24px]">
+            {/* Heading */}
+            <h2 className="font-bold text-[48px] leading-[48px] text-[#1e293b]">
+              Know a Great Local
+              <br />
+              Business?
+            </h2>
 
-            {/* Features */}
-            <div className="flex flex-col gap-[16px] md:gap-[24px]">
-              {/* Feature 1 */}
-              <div className="flex items-start gap-[12px] md:gap-[16px]">
-                <div className="flex-shrink-0 w-[40px] md:w-[48px] h-[40px] md:h-[48px] rounded-[12px] md:rounded-[16px] bg-[rgba(144,238,144,0.3)] flex items-center justify-center">
-                  <StoreIcon />
+            {/* Description */}
+            <p className="font-normal text-[20px] leading-[32.5px] text-[#374151] max-w-[580px]">
+              Help your favourite local businesses get discovered. Nominate them
+              to join Aulax and we&apos;ll reach out to bring them on board.
+            </p>
+
+            {/* Feature List */}
+            <div className="flex flex-col gap-[16px]">
+              <div className="flex items-start">
+                <div className="pt-[4px]">
+                  <CheckIcon />
                 </div>
-                <div>
-                  <h4 className="font-semibold text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] text-[#1e293b]">
-                    Support Local Shops
-                  </h4>
-                  <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563]">
-                    Help your community&apos;s best businesses get the
-                    visibility they deserve.
-                  </p>
-                </div>
+                <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                  Support Local Shops
+                </span>
               </div>
-
-              {/* Feature 2 */}
-              <div className="flex items-start gap-[12px] md:gap-[16px]">
-                <div className="flex-shrink-0 w-[40px] md:w-[48px] h-[40px] md:h-[48px] rounded-[12px] md:rounded-[16px] bg-[rgba(144,238,144,0.3)] flex items-center justify-center">
-                  <HeartIcon />
+              <div className="flex items-start">
+                <div className="pt-[4px]">
+                  <CheckIcon />
                 </div>
-                <div>
-                  <h4 className="font-semibold text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] text-[#1e293b]">
-                    Share the Love
-                  </h4>
-                  <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563]">
-                    Your recommendations help fellow shoppers discover amazing
-                    local finds.
-                  </p>
-                </div>
+                <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                  Share the Love
+                </span>
               </div>
-
-              {/* Feature 3 */}
-              <div className="flex items-start gap-[12px] md:gap-[16px]">
-                <div className="flex-shrink-0 w-[40px] md:w-[48px] h-[40px] md:h-[48px] rounded-[12px] md:rounded-[16px] bg-[rgba(144,238,144,0.3)] flex items-center justify-center">
-                  <GiftIcon />
+              <div className="flex items-start">
+                <div className="pt-[4px]">
+                  <CheckIcon />
                 </div>
-                <div>
-                  <h4 className="font-semibold text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] text-[#1e293b]">
-                    Earn Rewards
-                  </h4>
-                  <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563]">
-                    Get rewarded when businesses you nominate join the Aulax
-                    platform.
-                  </p>
-                </div>
+                <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                  Earn Rewards
+                </span>
               </div>
             </div>
 
-            {/* CTA */}
+            {/* CTA Button */}
             <div>
               <Link
                 href="#nominate-form"
-                className="inline-flex items-center gap-[8px] bg-[#006a4e] text-white font-semibold text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] px-[20px] md:px-[24px] py-[10px] md:py-[12px] rounded-full hover:bg-[#005540] transition-colors"
+                className="inline-flex items-center gap-[8px] bg-[#006a4e] text-white font-bold text-[18px] leading-[28px] px-[32px] py-[16px] rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-[#005a42] transition-colors"
               >
                 Nominate a Business
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M3 8h10M9 4l4 4-4 4" />
-                </svg>
+                <ArrowIcon />
               </Link>
             </div>
           </div>
 
-          {/* Right Side - Stats Card */}
-          <div className="w-full lg:w-auto lg:flex-shrink-0">
-            <div className="bg-white rounded-[16px] md:rounded-[24px] p-[24px] md:p-[32px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
-              <div className="flex flex-col gap-[24px] md:gap-[32px]">
-                {/* Stat 1 */}
-                <div className="text-center">
-                  <p className="font-bold text-[36px] md:text-[48px] leading-[40px] md:leading-[48px] text-[#006a4e]">
-                    500+
-                  </p>
-                  <p className="font-medium text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#6b7280] mt-[4px] md:mt-[8px]">
-                    Local Shops Nominated
-                  </p>
+          {/* Right - Stats Card */}
+          <div className="flex-1">
+            <div
+              className="rounded-[24px] p-[48px] relative overflow-hidden"
+              style={{
+                background:
+                  "linear-gradient(135deg, #006a4e 0%, #1e293b 100%)",
+              }}
+            >
+              {/* Decorative circles */}
+              <div className="absolute top-[-64px] right-[-64px] w-[192px] h-[192px] rounded-full bg-[rgba(144,238,144,0.2)]" />
+              <div className="absolute bottom-[-48px] left-[-48px] w-[128px] h-[128px] rounded-full bg-[rgba(144,238,144,0.2)]" />
+
+              {/* Stats Content */}
+              <div className="relative z-10 flex flex-col gap-[32px]">
+                {/* Stats Grid */}
+                <div className="grid grid-cols-3 gap-[24px]">
+                  {/* Stat 1 */}
+                  <div className="flex flex-col gap-[8px] items-center">
+                    <span className="font-bold text-[48px] leading-[48px] text-[#90ee90]">
+                      500+
+                    </span>
+                    <span className="font-normal text-[14px] leading-[20px] text-[#d1d5db] text-center">
+                      Local Shops
+                    </span>
+                  </div>
+
+                  {/* Stat 2 */}
+                  <div className="flex flex-col gap-[8px] items-center">
+                    <span className="font-bold text-[48px] leading-[48px] text-[#90ee90]">
+                      2,000+
+                    </span>
+                    <span className="font-normal text-[14px] leading-[20px] text-[#d1d5db] text-center">
+                      Nominations
+                    </span>
+                  </div>
+
+                  {/* Stat 3 */}
+                  <div className="flex flex-col gap-[8px] items-center">
+                    <span className="font-bold text-[48px] leading-[48px] text-[#90ee90]">
+                      85%
+                    </span>
+                    <span className="font-normal text-[14px] leading-[20px] text-[#d1d5db] text-center">
+                      Success Rate
+                    </span>
+                  </div>
                 </div>
 
-                <div className="h-[1px] bg-[#e5e7eb]" />
-
-                {/* Stat 2 */}
-                <div className="text-center">
-                  <p className="font-bold text-[36px] md:text-[48px] leading-[40px] md:leading-[48px] text-[#006a4e]">
-                    350+
-                  </p>
-                  <p className="font-medium text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#6b7280] mt-[4px] md:mt-[8px]">
-                    Successfully Onboarded
-                  </p>
-                </div>
-
-                <div className="h-[1px] bg-[#e5e7eb]" />
-
-                {/* Stat 3 */}
-                <div className="text-center">
-                  <p className="font-bold text-[36px] md:text-[48px] leading-[40px] md:leading-[48px] text-[#006a4e]">
-                    70%
-                  </p>
-                  <p className="font-medium text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#6b7280] mt-[4px] md:mt-[8px]">
-                    Conversion Rate
+                {/* Bottom text */}
+                <div className="bg-[rgba(255,255,255,0.1)] rounded-[16px] p-[16px]">
+                  <p className="font-normal text-[16px] leading-[24px] text-[#e5e7eb] text-center">
+                    Help us grow the Aulax community by nominating your favourite local businesses!
                   </p>
                 </div>
               </div>

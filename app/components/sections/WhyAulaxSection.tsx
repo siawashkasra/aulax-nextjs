@@ -1,258 +1,430 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// Checkmark Icon
+// Checkmark Icon - matches Figma exactly
 const CheckIcon = () => (
-  <svg
-    width="20"
-    height="20"
-    viewBox="0 0 20 20"
-    fill="none"
-    stroke="#006a4e"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M16.667 5L7.5 14.167 3.333 10" />
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M16.667 5L7.5 14.167 3.333 10"
+      stroke="#006a4e"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
-// Apple icon
-const AppleIcon = () => (
-  <svg width="18" height="24" viewBox="0 0 18 24" fill="white">
-    <path d="M14.94 12.66c-.02-2.32 1.89-3.43 1.98-3.49-1.08-1.58-2.76-1.8-3.36-1.82-1.43-.14-2.79.84-3.52.84-.73 0-1.85-.82-3.04-.8-1.56.02-3 .91-3.81 2.31-1.62 2.82-.41 7 1.17 9.29.77 1.12 1.69 2.37 2.9 2.33 1.16-.05 1.6-.75 3.01-.75 1.4 0 1.8.75 3.02.73 1.25-.02 2.04-1.14 2.8-2.26.88-1.29 1.25-2.55 1.27-2.61-.03-.01-2.44-.94-2.46-3.72l.04-.05zM12.58 5.18c.64-.78 1.07-1.85.95-2.93-.92.04-2.03.61-2.69 1.38-.59.69-1.11 1.78-.97 2.83 1.02.08 2.07-.52 2.71-1.28z" />
+// Feature icons
+const ShopIcon = () => (
+  <svg width="37.5" height="30" viewBox="0 0 38 30" fill="white">
+    <path d="M34 10V28C34 29.1 33.1 30 32 30H6C4.9 30 4 29.1 4 28V10" />
+    <path d="M38 0H0V10C0 12.21 1.79 14 4 14C6.21 14 8 12.21 8 10C8 12.21 9.79 14 12 14C14.21 14 16 12.21 16 10C16 12.21 17.79 14 20 14C22.21 14 24 12.21 24 10C24 12.21 25.79 14 28 14C30.21 14 32 12.21 32 10C32 12.21 33.79 14 36 14C38.21 14 40 12.21 40 10V0H38Z" />
   </svg>
 );
 
-const GooglePlayIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-    <path d="M3.17 1.24c-.28.29-.42.72-.42 1.26v15c0 .54.14.97.42 1.26l.07.06 8.4-8.4v-.2L3.24 1.18l-.07.06z" />
-    <path d="M14.44 13.22l-2.8-2.8v-.2l2.8-2.8.06.03 3.32 1.89c.95.54.95 1.42 0 1.96l-3.32 1.89-.06.03z" />
-    <path d="M14.5 13.19L11.64 10.33 3.17 18.8c.31.33.83.37 1.42.04l9.91-5.65" />
-    <path d="M14.5 7.47L4.59 1.82c-.59-.33-1.11-.29-1.42.04l8.47 8.47 2.86-2.86z" />
+const OffersIcon = () => (
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="white">
+    <path d="M15 0L0 15L15 30L30 15L15 0ZM15 3L27 15L15 27L3 15L15 3Z" />
+    <circle cx="15" cy="15" r="6" />
   </svg>
 );
 
-interface FeatureCardProps {
-  title: string;
-  description: string;
-  points: string[];
-  imageSrc: string;
-  imageAlt: string;
-  imageOnLeft: boolean;
-}
+const MapIcon = () => (
+  <svg width="33.75" height="30" viewBox="0 0 34 30" fill="white">
+    <path d="M0 2.5V27.5L11.25 22.5L22.5 27.5L33.75 22.5V-2.5L22.5 2.5L11.25 -2.5L0 2.5ZM22.5 22.5L11.25 17.5V2.5L22.5 7.5V22.5Z" />
+  </svg>
+);
 
-function FeatureCard({
-  title,
-  description,
-  points,
-  imageSrc,
-  imageAlt,
-  imageOnLeft,
-}: FeatureCardProps) {
-  return (
-    <div
-      className={`flex flex-col ${
-        imageOnLeft ? "lg:flex-row" : "lg:flex-row-reverse"
-      } items-center gap-[24px] md:gap-[32px] lg:gap-[48px]`}
-    >
-      {/* Image */}
-      <div className="relative w-full lg:w-1/2 aspect-[4/3] rounded-[16px] md:rounded-[24px] overflow-hidden shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
-        <Image src={imageSrc} alt={imageAlt} fill className="object-cover" />
-      </div>
+const RewardsIcon = () => (
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="white">
+    <path d="M15 0L19.5 10.5L30 12L22.5 19.5L24 30L15 24.5L6 30L7.5 19.5L0 12L10.5 10.5L15 0Z" />
+  </svg>
+);
 
-      {/* Content */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-[12px] md:gap-[16px]">
-        <h3 className="font-bold text-[24px] md:text-[30px] leading-[28px] md:leading-[36px] text-[#1e293b]">
-          {title}
-        </h3>
-        <p className="text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] text-[#4b5563]">
-          {description}
-        </p>
-        <ul className="flex flex-col gap-[8px] md:gap-[12px]">
-          {points.map((point, index) => (
-            <li key={index} className="flex items-center gap-[8px] md:gap-[12px]">
-              <span className="flex-shrink-0">
-                <CheckIcon />
-              </span>
-              <span className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#374151]">
-                {point}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
+const LeafIcon = () => (
+  <svg width="30" height="30" viewBox="0 0 30 30" fill="#1e293b">
+    <path d="M27 3C27 3 24 0 15 0C6 0 3 6 3 15C3 24 9 27 9 27C9 27 6 18 15 15C24 12 27 3 27 3Z" />
+    <path d="M3 27L15 15" stroke="#1e293b" strokeWidth="2" />
+  </svg>
+);
 
 export default function WhyAulaxSection() {
-  const features = [
-    {
-      title: "Shop Smarter, Faster",
-      description:
-        "Find exactly what you need from local stores. Search for products, compare prices, and check availability—all in one place.",
-      points: [
-        "Real-time inventory updates",
-        "Price comparison tools",
-        "Personalised recommendations",
-      ],
-      imageSrc: "/images/shop-smarter.jpg",
-      imageAlt: "Person shopping with smartphone showing Aulax app",
-      imageOnLeft: true,
-    },
-    {
-      title: "Exclusive Deals & Offers",
-      description:
-        "Unlock exclusive deals from your favourite local shops. Save money while supporting businesses in your community.",
-      points: [
-        "Daily deals and discounts",
-        "Loyalty rewards programme",
-        "Flash sales notifications",
-      ],
-      imageSrc: "/images/exclusive-deals.jpg",
-      imageAlt: "Special offers and discount cards",
-      imageOnLeft: false,
-    },
-    {
-      title: "Discover Hidden Gems",
-      description:
-        "Explore unique local businesses you never knew existed. From artisan bakeries to vintage boutiques—find your new favourites.",
-      points: [
-        "Curated local business guides",
-        "User reviews and ratings",
-        "Map-based discovery",
-      ],
-      imageSrc: "/images/hidden-gems.jpg",
-      imageAlt: "Charming local boutique storefront",
-      imageOnLeft: true,
-    },
-    {
-      title: "Earn Rewards Every Visit",
-      description:
-        "Get rewarded for shopping local. Earn points with every purchase and redeem them for exclusive perks and discounts.",
-      points: [
-        "Points-based rewards system",
-        "Tiered membership benefits",
-        "Exclusive member events",
-      ],
-      imageSrc: "/images/earn-rewards.jpg",
-      imageAlt: "Customer receiving rewards points",
-      imageOnLeft: false,
-    },
-  ];
-
   return (
     <section
       id="why-aulax"
-      className="px-[24px] md:px-[40px] lg:px-[80px] py-[48px] md:py-[64px] lg:py-[96px] bg-white"
+      className="bg-white px-[80px] py-[96px]"
     >
-      <div className="max-w-[1280px] mx-auto px-0 md:px-[24px]">
-        {/* Header */}
-        <div className="flex flex-col items-center gap-[16px] md:gap-[24px] mb-[48px] md:mb-[64px]">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-[8px] bg-[rgba(144,238,144,0.3)] px-[12px] py-[6px] rounded-full">
-            <span className="font-semibold text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#006a4e]">
-              Why Aulax?
-            </span>
+      <div className="max-w-[1280px] mx-auto px-[24px]">
+        {/* Header Section */}
+        <div className="relative h-[152px] mb-[64px]">
+          {/* Why Aulax? Badge - centered */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2">
+            <div className="bg-[rgba(144,238,144,0.3)] px-[16px] py-[8px] rounded-full">
+              <span className="font-semibold text-[14px] leading-[20px] text-[#1e293b] text-center">
+                Why Aulax?
+              </span>
+            </div>
           </div>
 
-          {/* Heading */}
-          <div className="max-w-[672px] text-center">
-            <h2 className="font-bold text-[32px] md:text-[40px] lg:text-[48px] leading-[36px] md:leading-[44px] lg:leading-[48px] text-[#1e293b]">
+          {/* User Benefits Heading - centered */}
+          <div className="absolute top-[60px] left-0 right-0 flex justify-center">
+            <h2 className="font-bold text-[48px] leading-[48px] text-[#1e293b] text-center">
               User Benefits
             </h2>
           </div>
-        </div>
 
-        {/* Feature Cards */}
-        <div className="flex flex-col gap-[48px] md:gap-[64px] lg:gap-[96px]">
-          {features.map((feature, index) => (
-            <FeatureCard key={index} {...feature} />
-          ))}
-        </div>
-
-        {/* Sustainability Banner */}
-        <div className="mt-[48px] md:mt-[64px] lg:mt-[96px] relative rounded-[16px] md:rounded-[24px] overflow-hidden">
-          <div className="absolute inset-0">
-            <Image
-              src="/images/sustainability-banner.jpg"
-              alt="Sustainable local shopping"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#006a4e]/90 to-[#006a4e]/70" />
-          </div>
-
-          <div className="relative z-10 p-[24px] md:p-[48px] lg:p-[64px] flex flex-col lg:flex-row items-center gap-[24px] md:gap-[32px]">
-            <div className="flex-1 text-center lg:text-left">
-              <h3 className="font-bold text-[24px] md:text-[30px] lg:text-[36px] leading-[28px] md:leading-[36px] lg:leading-[40px] text-white mb-[12px] md:mb-[16px]">
-                Shop Local, Shop Sustainable
-              </h3>
-              <p className="text-[14px] md:text-[16px] lg:text-[18px] leading-[20px] md:leading-[24px] lg:leading-[28px] text-white/90 max-w-[600px]">
-                Every local purchase reduces carbon emissions, supports your
-                community, and helps create a more sustainable future for
-                everyone.
-              </p>
-            </div>
-            <div className="flex-shrink-0">
-              <Link
-                href="#download"
-                className="inline-block bg-white text-[#006a4e] font-semibold text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] px-[20px] md:px-[24px] py-[10px] md:py-[12px] rounded-full hover:bg-gray-100 transition-colors"
-              >
-                Start Shopping Local
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Download CTA */}
-        <div className="mt-[48px] md:mt-[64px] lg:mt-[96px] flex flex-col items-center gap-[24px] md:gap-[32px]">
-          <div className="text-center">
-            <h3 className="font-bold text-[24px] md:text-[30px] leading-[28px] md:leading-[36px] text-[#1e293b] mb-[8px] md:mb-[12px]">
-              Download Aulax Today
-            </h3>
-            <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563]">
-              Join thousands of shoppers discovering their local marketplace
+          {/* Subtitle - centered */}
+          <div className="absolute top-[124px] left-[232px] right-[232px] flex justify-center">
+            <p className="font-normal text-[18px] leading-[28px] text-[#4b5563] text-center">
+              Experience smarter, faster, and more personalized local shopping
             </p>
           </div>
+        </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-[12px] sm:gap-[16px]">
-            {/* App Store */}
-            <Link
-              href="#"
-              className="flex items-center bg-black px-[16px] py-[10px] md:py-[12px] rounded-[8px] hover:bg-gray-900 transition-colors"
-            >
-              <div className="w-[18px] h-[24px]">
-                <AppleIcon />
+        {/* Feature Cards Container */}
+        <div className="flex flex-col gap-[128px]">
+          {/* Feature 1 - Shop Smarter, Faster (Image Left) */}
+          <div className="flex gap-[64px] items-center justify-center">
+            {/* Image */}
+            <div className="flex-1 h-[500px] rounded-[24px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/shop-smarter.jpg"
+                  alt="Person checking product availability on smartphone in a local store aisle"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="ml-[8px]">
-                <p className="text-[10px] md:text-[12px] leading-[14px] md:leading-[16px] text-white">
-                  Download on the
-                </p>
-                <p className="font-semibold text-[16px] md:text-[18px] leading-[20px] md:leading-[28px] text-white">
-                  App Store
-                </p>
-              </div>
-            </Link>
+            </div>
 
-            {/* Google Play */}
+            {/* Content */}
+            <div className="flex-1 flex flex-col gap-[24px]">
+              {/* Icon */}
+              <div className="w-[64px] h-[64px] bg-[#006a4e] rounded-[16px] flex items-center justify-center">
+                <ShopIcon />
+              </div>
+
+              {/* Heading */}
+              <h3 className="font-bold text-[36px] leading-[40px] text-[#1e293b]">
+                Shop Smarter, Faster
+              </h3>
+
+              {/* Description */}
+              <p className="font-normal text-[20px] leading-[32.5px] text-[#374151]">
+                Check stock before you go and order ahead so your items
+                are ready when you arrive. No more wasted trips or waiting in
+                line just grab and go!
+              </p>
+
+              {/* List */}
+              <div className="flex flex-col gap-[16px]">
+                <div className="flex items-start">
+                  <div className="pt-[4px]">
+                    <CheckIcon />
+                  </div>
+                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                    Real-time inventory checking
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <div className="pt-[4px]">
+                    <CheckIcon />
+                  </div>
+                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                    Order ahead for quick pickup
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <div className="pt-[4px]">
+                    <CheckIcon />
+                  </div>
+                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                    Skip the lines and save time
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 2 - Offers Just for You (Image Right) */}
+          <div className="flex gap-[64px] items-center justify-center">
+            {/* Content */}
+            <div className="flex-1 flex flex-col gap-[24px]">
+              {/* Icon */}
+              <div className="w-[64px] h-[64px] bg-[#006a4e] rounded-[16px] flex items-center justify-center">
+                <OffersIcon />
+              </div>
+
+              {/* Heading */}
+              <h3 className="font-bold text-[36px] leading-[40px] text-[#1e293b]">
+                Exclusive Offers
+              </h3>
+
+              {/* Description */}
+              <p className="font-normal text-[20px] leading-[32.5px] text-[#374151]">
+                Get personalized deals and rewards from your favorite local
+                shops. The more you shop, the better the offers—tailored to
+                what you love!
+              </p>
+
+              {/* List */}
+              <div className="flex flex-col gap-[16px]">
+                <div className="flex items-start">
+                  <div className="pt-[4px]">
+                    <CheckIcon />
+                  </div>
+                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                    Exclusive personalized discounts
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <div className="pt-[4px]">
+                    <CheckIcon />
+                  </div>
+                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                    Loyalty rewards that grow with you
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <div className="pt-[4px]">
+                    <CheckIcon />
+                  </div>
+                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                    Flash deals from favorite stores
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Image */}
+            <div className="flex-1 h-[500px] rounded-[24px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/offers.jpg"
+                  alt="Mobile phone screen displaying personalized shopping offers and deals"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 3 - Discover Local Gems (Image Left) */}
+          <div className="flex gap-[64px] items-center justify-center">
+            {/* Image */}
+            <div className="flex-1 h-[500px] rounded-[24px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/discover-gems.jpg"
+                  alt="Overhead view of a neighborhood map with colorful pins marking local shops"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 flex flex-col gap-[24px]">
+              {/* Icon */}
+              <div className="w-[64px] h-[64px] bg-[#006a4e] rounded-[16px] flex items-center justify-center">
+                <MapIcon />
+              </div>
+
+              {/* Heading */}
+              <h3 className="font-bold text-[36px] leading-[40px] text-[#1e293b]">
+                Discover Local Gems
+              </h3>
+
+              {/* Description */}
+              <p className="font-normal text-[20px] leading-[32.5px] text-[#374151]">
+                Find hidden treasures in your neighborhood with real insights
+                from your community. Explore new shops, read authentic
+                reviews, and support local businesses you&apos;ll love.
+              </p>
+
+              {/* List */}
+              <div className="flex flex-col gap-[16px]">
+                <div className="flex items-start">
+                  <div className="pt-[4px]">
+                    <CheckIcon />
+                  </div>
+                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                    Discover hidden neighborhood shops
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <div className="pt-[4px]">
+                    <CheckIcon />
+                  </div>
+                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                    Read authentic community reviews
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <div className="pt-[4px]">
+                    <CheckIcon />
+                  </div>
+                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                    Support local businesses easily
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature 4 - Earn Rewards Every Time (Image Right) */}
+          <div className="flex gap-[64px] items-center justify-center">
+            {/* Content */}
+            <div className="flex-1 flex flex-col gap-[24px]">
+              {/* Icon */}
+              <div className="w-[64px] h-[64px] bg-[#006a4e] rounded-[16px] flex items-center justify-center">
+                <RewardsIcon />
+              </div>
+
+              {/* Heading */}
+              <h3 className="font-bold text-[36px] leading-[40px] text-[#1e293b]">
+                Earn Rewards
+              </h3>
+
+              {/* Description */}
+              <p className="font-normal text-[20px] leading-[32.5px] text-[#374151]">
+                Collect cashback and loyalty rewards with every purchase.
+                Track your earnings, redeem them at participating stores, and
+                make every shopping trip more rewarding.
+              </p>
+
+              {/* List */}
+              <div className="flex flex-col gap-[16px]">
+                <div className="flex items-start">
+                  <div className="pt-[4px]">
+                    <CheckIcon />
+                  </div>
+                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                    Cashback on every purchase
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <div className="pt-[4px]">
+                    <CheckIcon />
+                  </div>
+                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                    Track all your rewards in one place
+                  </span>
+                </div>
+                <div className="flex items-start">
+                  <div className="pt-[4px]">
+                    <CheckIcon />
+                  </div>
+                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
+                    Redeem at participating stores
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Image */}
+            <div className="flex-1 h-[500px] rounded-[24px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/earn-rewards.jpg"
+                  alt="Digital wallet interface showing cashback rewards and points accumulation"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Sustainability Banner */}
+          <div
+            className="relative rounded-[24px] overflow-hidden px-[168px] py-[64px]"
+            style={{
+              background: "linear-gradient(to right, #006a4e, #1e293b)",
+            }}
+          >
+            {/* Top-right decoration */}
+            <div className="absolute -top-[128px] -right-[128px] w-[256px] h-[256px] rounded-full bg-[rgba(144,238,144,0.2)]" />
+            {/* Bottom-left decoration */}
+            <div className="absolute -bottom-[96px] -left-[96px] w-[192px] h-[192px] rounded-full bg-[rgba(144,238,144,0.2)]" />
+
+            {/* Content */}
+            <div className="relative flex flex-col gap-[24px] items-center max-w-[896px] mx-auto">
+              {/* Icon */}
+              <div className="w-[64px] h-[64px] bg-[#90ee90] rounded-[16px] flex items-center justify-center">
+                <LeafIcon />
+              </div>
+
+              {/* Heading */}
+              <h3 className="font-bold text-[36px] leading-[40px] text-white text-center">
+                Shop Sustainably
+              </h3>
+
+              {/* Description */}
+              <p className="font-normal text-[20px] leading-[32.5px] text-[#e5e7eb] text-center">
+                Make eco-friendly choices with digital receipts and sustainability tracking. See the positive
+                impact of supporting local businesses and help reduce waste in your community.
+              </p>
+
+              {/* Stats */}
+              <div className="flex gap-[32px] items-start justify-center pt-[8px]">
+                <div className="flex flex-col gap-[8px] items-center w-[234.66px]">
+                  <span className="font-bold text-[48px] leading-[48px] text-[#90ee90] text-center">
+                    100%
+                  </span>
+                  <span className="font-normal text-[16px] leading-[24px] text-[#d1d5db] text-center">
+                    Digital Receipts
+                  </span>
+                </div>
+                <div className="flex flex-col gap-[8px] items-center w-[234.67px]">
+                  <span className="font-bold text-[48px] leading-[48px] text-[#90ee90] text-center">
+                    85%
+                  </span>
+                  <span className="font-normal text-[16px] leading-[24px] text-[#d1d5db] text-center">
+                    Waste Reduction
+                  </span>
+                </div>
+                <div className="flex flex-col gap-[8px] items-center w-[234.67px]">
+                  <span className="font-bold text-[48px] leading-[48px] text-[#90ee90] text-center">
+                    Local
+                  </span>
+                  <span className="font-normal text-[16px] leading-[24px] text-[#d1d5db] text-center">
+                    Community Impact
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Download CTA Section */}
+        <div className="flex flex-col gap-[24px] items-start pt-[16px] mt-[64px]">
+          {/* Heading */}
+          <div className="w-full flex justify-center">
+            <h3 className="font-bold text-[30px] leading-[36px] text-[#1e293b] text-center">
+              Ready to experience the future of local shopping?
+            </h3>
+          </div>
+
+          {/* Buttons */}
+          <div className="w-full flex items-center justify-center">
             <Link
-              href="#"
-              className="flex items-center bg-black px-[16px] py-[10px] md:py-[12px] rounded-[8px] hover:bg-gray-900 transition-colors"
+              href="#download"
+              className="bg-[#90ee90] px-[32px] py-[16px] rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-[#7de87d] transition-colors"
             >
-              <div className="w-[20px] h-[20px]">
-                <GooglePlayIcon />
-              </div>
-              <div className="ml-[8px]">
-                <p className="text-[10px] md:text-[12px] leading-[14px] md:leading-[16px] text-white">
-                  GET IT ON
-                </p>
-                <p className="font-semibold text-[16px] md:text-[18px] leading-[20px] md:leading-[28px] text-white">
-                  Google Play
-                </p>
-              </div>
+              <span className="font-bold text-[18px] leading-[28px] text-[#1e293b] text-center">
+                Download Aulax Now
+              </span>
             </Link>
+            <div className="ml-[16px]">
+              <Link
+                href="#learn-more"
+                className="border-2 border-[#1e293b] px-[34px] py-[18px] rounded-full hover:bg-[#f1f5f9] transition-colors"
+              >
+                <span className="font-bold text-[18px] leading-[28px] text-[#1e293b] text-center">
+                  Learn More
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

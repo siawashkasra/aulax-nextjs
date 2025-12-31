@@ -4,124 +4,59 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-// Star icon for ratings
-const StarIcon = ({ filled }: { filled: boolean }) => (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill={filled ? "#fbbf24" : "none"}
-    stroke="#fbbf24"
-    strokeWidth="1.5"
-  >
-    <path d="M8 1l1.79 3.63 4.01.58-2.9 2.83.68 3.99L8 10.27l-3.58 1.88.68-3.99-2.9-2.83 4.01-.58L8 1z" />
+// Star icon
+const StarIcon = () => (
+  <svg width="15.75" height="14" viewBox="0 0 16 14" fill="#fbbf24">
+    <path d="M8 0l2.245 4.552 5.021.73-3.633 3.541.858 5.002L8 11.572l-4.491 2.253.858-5.002L.734 5.282l5.021-.73L8 0z" />
   </svg>
 );
 
-// Quote icon
-const QuoteIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="#e5e7eb">
-    <path d="M10 8c-3.3 0-6 2.7-6 6 0 5 4 10 10 14l2-3c-4-3-6-6-6-9h4c2.2 0 4-1.8 4-4s-1.8-4-4-4h-4zm14 0c-3.3 0-6 2.7-6 6 0 5 4 10 10 14l2-3c-4-3-6-6-6-9h4c2.2 0 4-1.8 4-4s-1.8-4-4-4h-4z" />
+// Calendar icon
+const CalendarIcon = () => (
+  <svg width="15.75" height="18" viewBox="0 0 16 18" fill="white">
+    <path d="M12 2V0h-2v2H6V0H4v2H0v16h16V2h-4zM2 16V6h12v10H2z" />
   </svg>
 );
 
-interface TestimonialProps {
-  quote: string;
-  name: string;
-  role: string;
-  business: string;
-  rating: number;
-  imageSrc: string;
-}
+// Checkmark icon for the note
+const CheckmarkNoteIcon = () => (
+  <svg width="17.5" height="14" viewBox="0 0 18 14" fill="#006a4e">
+    <path d="M6 11.17L1.83 7l-1.42 1.41L6 14 18 2l-1.41-1.41L6 11.17z" />
+  </svg>
+);
 
-function TestimonialCard({
-  quote,
-  name,
-  role,
-  business,
-  rating,
-  imageSrc,
-}: TestimonialProps) {
-  return (
-    <div className="bg-white rounded-[16px] md:rounded-[24px] p-[20px] md:p-[32px] shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)]">
-      <div className="flex flex-col gap-[16px] md:gap-[20px]">
-        {/* Quote icon */}
-        <div className="opacity-30">
-          <QuoteIcon />
-        </div>
+// Apple icon
+const AppleIcon = () => (
+  <svg width="22.5" height="30" viewBox="0 0 23 30" fill="white">
+    <path d="M18.71 15.825c-.03-2.9 2.36-4.29 2.47-4.36-1.35-1.98-3.45-2.25-4.2-2.28-1.79-.18-3.49 1.05-4.4 1.05-.91 0-2.31-1.02-3.8-1-1.95.03-3.75 1.14-4.76 2.89-2.03 3.52-.52 8.75 1.46 11.61.97 1.4 2.11 2.97 3.63 2.91 1.45-.06 2-1 3.76-.94 1.75 0 2.25.94 3.77.91 1.57-.03 2.55-1.42 3.5-2.83 1.1-1.61 1.56-3.18 1.59-3.26-.03-.02-3.05-1.17-3.08-4.65l.06-.05zm-2.95-8.49c.8-.97 1.34-2.31 1.19-3.66-1.15.05-2.54.76-3.36 1.72-.74.86-1.39 2.22-1.21 3.54 1.28.1 2.59-.64 3.38-1.6z" />
+  </svg>
+);
 
-        {/* Quote */}
-        <p className="text-[14px] md:text-[16px] leading-[22px] md:leading-[26px] text-[#374151]">
-          &ldquo;{quote}&rdquo;
-        </p>
-
-        {/* Rating */}
-        <div className="flex gap-[2px]">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <StarIcon key={star} filled={star <= rating} />
-          ))}
-        </div>
-
-        {/* Author */}
-        <div className="flex items-center gap-[10px] md:gap-[12px]">
-          <div className="relative w-[40px] md:w-[48px] h-[40px] md:h-[48px] rounded-full overflow-hidden">
-            <Image src={imageSrc} alt={name} fill className="object-cover" />
-          </div>
-          <div>
-            <p className="font-semibold text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#1e293b]">
-              {name}
-            </p>
-            <p className="text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#6b7280]">
-              {role}, {business}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+// Google Play icon
+const GooglePlayIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+    <path d="M3.61 1.49c-.34.35-.51.87-.51 1.53v18.01c0 .66.17 1.18.51 1.53l.08.07 10.08-10.08v-.24L3.69 1.42l-.08.07z" />
+    <path d="M17.33 15.86l-3.36-3.36v-.24l3.36-3.36.07.04 3.98 2.26c1.14.65 1.14 1.71 0 2.36l-3.98 2.26-.07.04z" />
+    <path d="M17.4 15.82L13.97 12.39 3.61 22.56c.37.39 1 .43 1.7.05l11.91-6.78.18-.01z" />
+    <path d="M17.4 8.94L5.31 2.15c-.7-.39-1.33-.34-1.7.05l10.36 10.36 3.43-3.62z" />
+  </svg>
+);
 
 export default function PartnershipSection() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
     businessName: "",
+    location: "",
+    yourName: "",
+    email: "",
     phone: "",
-    message: "",
+    challenges: "",
+    meetingTime: "",
   });
 
-  const testimonials: TestimonialProps[] = [
-    {
-      quote:
-        "Aulax has transformed how we connect with local customers. Our foot traffic increased by 40% in just three months.",
-      name: "Sarah Mitchell",
-      role: "Owner",
-      business: "The Corner Bakery",
-      rating: 5,
-      imageSrc: "/images/testimonial-sarah.jpg",
-    },
-    {
-      quote:
-        "The analytics dashboard helps us understand our customers better. We've been able to tailor our offerings perfectly.",
-      name: "James Chen",
-      role: "Manager",
-      business: "Green Grocers",
-      rating: 5,
-      imageSrc: "/images/testimonial-james.jpg",
-    },
-    {
-      quote:
-        "Easy to use and the support team is fantastic. It's exactly what small businesses like ours needed.",
-      name: "Emma Thompson",
-      role: "Co-founder",
-      business: "Vintage Finds",
-      rating: 5,
-      imageSrc: "/images/testimonial-emma.jpg",
-    },
-  ];
-
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -129,260 +64,312 @@ export default function PartnershipSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Partnership form submitted:", formData);
+    console.log("Form submitted:", formData);
   };
 
   return (
     <section
       id="partner"
-      className="px-[24px] md:px-[40px] lg:px-[80px] py-[48px] md:py-[64px] lg:py-[96px] bg-[#f9fafb]"
+      className="px-[80px] py-[96px]"
+      style={{
+        backgroundImage:
+          "linear-gradient(130.74deg, rgba(161, 255, 194, 0.2) 0%, rgba(255, 255, 255, 1) 100%)",
+      }}
     >
-      <div className="max-w-[1280px] mx-auto px-0 md:px-[24px]">
+      <div className="max-w-[1280px] mx-auto px-[24px]">
         {/* Header */}
-        <div className="flex flex-col items-center gap-[16px] md:gap-[24px] mb-[48px] md:mb-[64px]">
+        <div className="flex flex-col items-center gap-[24px] mb-[64px]">
           {/* Badge */}
-          <div className="inline-flex items-center gap-[8px] bg-[rgba(144,238,144,0.3)] px-[12px] py-[6px] rounded-full">
-            <span className="font-semibold text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#006a4e]">
-              Partner with Us
+          <div className="bg-[rgba(144,238,144,0.3)] px-[16px] py-[8px] rounded-full">
+            <span className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+              Partner with Aulax
             </span>
           </div>
 
           {/* Heading */}
-          <div className="max-w-[672px] text-center">
-            <h2 className="font-bold text-[32px] md:text-[40px] lg:text-[48px] leading-[36px] md:leading-[44px] lg:leading-[48px] text-[#1e293b]">
-              Grow Your Business with Aulax
+          <div className="max-w-[896px] text-center">
+            <h2 className="font-bold text-[48px] leading-[48px] text-[#1e293b]">
+              Hundreds of local businesses are already rewriting their success
+              stories with Aulax. Your chapter starts with a simple
+              conversation.
             </h2>
           </div>
-
-          <p className="text-center text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] text-[#4b5563] max-w-[600px]">
-            Join hundreds of local businesses already thriving on our platform.
-            Get discovered by new customers and boost your sales.
-          </p>
         </div>
 
-        {/* Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[16px] md:gap-[24px] mb-[48px] md:mb-[64px]">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
-          ))}
-        </div>
+        {/* Main Content - Two columns */}
+        <div className="flex gap-[48px] items-start justify-center max-w-[1152px] mx-auto">
+          {/* Left Column - Testimonials */}
+          <div className="flex-1 flex flex-col gap-[32px]">
+            {/* Top Image Placeholder */}
+            <div className="w-full h-[320px] rounded-[24px] bg-gray-200 shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] overflow-hidden">
+              <div className="w-full h-full bg-gradient-to-br from-[#006a4e] to-[#1e293b] flex items-center justify-center">
+                <span className="text-white/50 text-[14px]">
+                  Partner Image Placeholder
+                </span>
+              </div>
+            </div>
 
-        {/* Contact Form and Info */}
-        <div className="flex flex-col lg:flex-row gap-[32px] md:gap-[48px] lg:gap-[64px]">
-          {/* Form */}
-          <div className="flex-1 bg-white rounded-[16px] md:rounded-[24px] p-[24px] md:p-[32px] lg:p-[48px] shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)]">
-            <h3 className="font-bold text-[24px] md:text-[30px] leading-[28px] md:leading-[36px] text-[#1e293b] mb-[16px] md:mb-[24px]">
-              Book a Meeting
-            </h3>
-            <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] mb-[20px] md:mb-[32px]">
-              Fill out the form and our partnership team will get in touch
-              within 24 hours.
-            </p>
+            {/* Testimonials Card */}
+            <div className="bg-white rounded-[24px] p-[32px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
+              <h3 className="font-bold text-[24px] leading-[32px] text-[#1e293b] mb-[24px]">
+                What Our Partners Say
+              </h3>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-[14px] md:gap-[20px]">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-[14px] md:gap-[20px]">
-                {/* Name */}
-                <div>
-                  <label
-                    htmlFor="partner-name"
-                    className="block font-medium text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#374151] mb-[6px] md:mb-[8px]"
-                  >
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="partner-name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Full name"
-                    className="w-full px-[14px] md:px-[16px] py-[10px] md:py-[12px] border border-[#d1d5db] rounded-[8px] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
-                  />
+              <div className="flex flex-col gap-[24px]">
+                {/* Testimonial 1 */}
+                <div className="flex items-start">
+                  <div className="w-[48px] h-[48px] rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
+                    <div className="w-full h-full bg-gradient-to-br from-[#90ee90] to-[#006a4e]" />
+                  </div>
+                  <div className="ml-[16px] flex flex-col gap-[8px]">
+                    {/* Stars */}
+                    <div className="flex gap-[8px]">
+                      <StarIcon />
+                      <StarIcon />
+                      <StarIcon />
+                      <StarIcon />
+                      <StarIcon />
+                    </div>
+                    {/* Quote */}
+                    <p className="font-normal text-[16px] leading-[24px] text-[#374151]">
+                      &quot;Aulax helped us reach 3x more customers in just 2
+                      months. Best decision we made!&quot;
+                    </p>
+                    {/* Author */}
+                    <p className="font-normal text-[14px] leading-[20px] text-[#6b7280]">
+                      — Sarah M., Local Bakery Owner
+                    </p>
+                  </div>
                 </div>
 
-                {/* Email */}
-                <div>
-                  <label
-                    htmlFor="partner-email"
-                    className="block font-medium text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#374151] mb-[6px] md:mb-[8px]"
-                  >
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="partner-email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="you@business.com"
-                    className="w-full px-[14px] md:px-[16px] py-[10px] md:py-[12px] border border-[#d1d5db] rounded-[8px] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
-                  />
+                {/* Testimonial 2 */}
+                <div className="flex items-start">
+                  <div className="w-[48px] h-[48px] rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
+                    <div className="w-full h-full bg-gradient-to-br from-[#cffafe] to-[#006a4e]" />
+                  </div>
+                  <div className="ml-[16px] flex flex-col gap-[8px]">
+                    {/* Stars */}
+                    <div className="flex gap-[8px]">
+                      <StarIcon />
+                      <StarIcon />
+                      <StarIcon />
+                      <StarIcon />
+                      <StarIcon />
+                    </div>
+                    {/* Quote */}
+                    <p className="font-normal text-[16px] leading-[24px] text-[#374151]">
+                      &quot;The support team made onboarding so easy. We were
+                      live in 48 hours!&quot;
+                    </p>
+                    {/* Author */}
+                    <p className="font-normal text-[14px] leading-[20px] text-[#6b7280]">
+                      — James T., Hardware Store
+                    </p>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-[14px] md:gap-[20px]">
-                {/* Business Name */}
-                <div>
-                  <label
-                    htmlFor="partner-business"
-                    className="block font-medium text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#374151] mb-[6px] md:mb-[8px]"
-                  >
+            {/* Bottom Image Placeholder */}
+            <div className="w-full h-[256px] rounded-[24px] bg-gray-200 shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] overflow-hidden">
+              <div className="w-full h-full bg-gradient-to-br from-[#1e293b] to-[#006a4e] flex items-center justify-center">
+                <span className="text-white/50 text-[14px]">
+                  Community Image Placeholder
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Form */}
+          <div className="flex-1 bg-white rounded-[24px] pt-[32px] pb-[48px] px-[32px] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
+            <h3 className="font-bold text-[24px] leading-[32px] text-[#1e293b]">
+              Book a Meeting
+            </h3>
+            <p className="font-normal text-[16px] leading-[24px] text-[#4b5563] mt-[8px]">
+              Let&apos;s discuss how Aulax can help your business grow
+            </p>
+
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-[20px] mt-[24px]"
+            >
+              {/* Row 1 - Business Name & Location */}
+              <div className="flex gap-[20px]">
+                <div className="flex-1 flex flex-col gap-[8px]">
+                  <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
                     Business Name *
                   </label>
                   <input
                     type="text"
-                    id="partner-business"
                     name="businessName"
                     value={formData.businessName}
                     onChange={handleChange}
+                    placeholder="Your Business Name"
+                    className="w-full px-[18px] py-[16px] border-2 border-[#e5e7eb] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
                     required
-                    placeholder="Your business name"
-                    className="w-full px-[14px] md:px-[16px] py-[10px] md:py-[12px] border border-[#d1d5db] rounded-[8px] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
                   />
                 </div>
-
-                {/* Phone */}
-                <div>
-                  <label
-                    htmlFor="partner-phone"
-                    className="block font-medium text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#374151] mb-[6px] md:mb-[8px]"
-                  >
-                    Phone Number
+                <div className="flex-1 flex flex-col gap-[8px]">
+                  <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+                    Location *
                   </label>
                   <input
-                    type="tel"
-                    id="partner-phone"
-                    name="phone"
-                    value={formData.phone}
+                    type="text"
+                    name="location"
+                    value={formData.location}
                     onChange={handleChange}
-                    placeholder="+44 (0) 1234 567890"
-                    className="w-full px-[14px] md:px-[16px] py-[10px] md:py-[12px] border border-[#d1d5db] rounded-[8px] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
+                    placeholder="City, Province"
+                    className="w-full px-[18px] py-[16px] border-2 border-[#e5e7eb] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
+                    required
                   />
                 </div>
               </div>
 
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="partner-message"
-                  className="block font-medium text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#374151] mb-[6px] md:mb-[8px]"
-                >
-                  Message
+              {/* Your Name */}
+              <div className="flex flex-col gap-[8px]">
+                <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+                  Your Name *
                 </label>
-                <textarea
-                  id="partner-message"
-                  name="message"
-                  value={formData.message}
+                <input
+                  type="text"
+                  name="yourName"
+                  value={formData.yourName}
                   onChange={handleChange}
-                  rows={4}
-                  placeholder="Tell us about your business..."
-                  className="w-full px-[14px] md:px-[16px] py-[10px] md:py-[12px] border border-[#d1d5db] rounded-[8px] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent resize-none"
+                  placeholder="Full Name"
+                  className="w-full px-[18px] py-[16px] border-2 border-[#e5e7eb] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
+                  required
                 />
               </div>
 
-              {/* Submit */}
+              {/* Row 2 - Email & Phone */}
+              <div className="flex gap-[20px]">
+                <div className="flex-1 flex flex-col gap-[8px]">
+                  <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="your@email.com"
+                    className="w-full px-[18px] py-[16px] border-2 border-[#e5e7eb] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
+                    required
+                  />
+                </div>
+                <div className="flex-1 flex flex-col gap-[8px]">
+                  <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+1 (555) 000-0000"
+                    className="w-full px-[18px] py-[16px] border-2 border-[#e5e7eb] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
+                    required
+                  />
+                </div>
+              </div>
+
+              {/* Challenges */}
+              <div className="flex flex-col gap-[8px]">
+                <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+                  What&apos;s holding you back from growing? *
+                </label>
+                <textarea
+                  name="challenges"
+                  value={formData.challenges}
+                  onChange={handleChange}
+                  placeholder="Tell us about your current challenges and goals..."
+                  rows={3}
+                  className="w-full px-[18px] py-[14px] border-2 border-[#e5e7eb] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent resize-none"
+                  required
+                />
+              </div>
+
+              {/* Meeting Time */}
+              <div className="flex flex-col gap-[8px]">
+                <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+                  Preferred Meeting Time
+                </label>
+                <select
+                  name="meetingTime"
+                  value={formData.meetingTime}
+                  onChange={handleChange}
+                  className="w-full px-[22px] py-[14px] border-2 border-[#e5e7eb] bg-[#efefef] rounded-[12px] text-[16px] leading-[20px] text-[#1f2937] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
+                >
+                  <option value="">Select a time slot</option>
+                  <option value="morning">Morning (9am - 12pm)</option>
+                  <option value="afternoon">Afternoon (12pm - 5pm)</option>
+                  <option value="evening">Evening (5pm - 8pm)</option>
+                </select>
+              </div>
+
+              {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#006a4e] text-white font-semibold text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] px-[24px] py-[12px] md:py-[14px] rounded-full hover:bg-[#005540] transition-colors"
+                className="w-full flex items-center justify-center gap-[8px] bg-[#1e293b] text-white font-bold text-[18px] leading-[28px] px-[32px] py-[16px] rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-[#334155] transition-colors"
               >
-                Schedule a Meeting
+                <CalendarIcon />
+                I&apos;m Ready
               </button>
+
+              {/* Note */}
+              <div className="bg-[rgba(161,255,194,0.3)] rounded-[16px] p-[16px]">
+                <div className="flex items-start gap-[14px]">
+                  <div className="mt-[3px]">
+                    <CheckmarkNoteIcon />
+                  </div>
+                  <p className="font-normal text-[14px] leading-[20px] text-[#374151] text-center flex-1">
+                    &quot;No pressure. No commitments. Just two neighbours
+                    talking about what&apos;s possible.&quot;
+                  </p>
+                </div>
+              </div>
             </form>
           </div>
+        </div>
 
-          {/* Info */}
-          <div className="w-full lg:w-[400px] flex flex-col gap-[16px] md:gap-[24px]">
-            {/* Benefits Card */}
-            <div className="bg-[#006a4e] rounded-[16px] md:rounded-[24px] p-[24px] md:p-[32px] text-white">
-              <h4 className="font-bold text-[20px] md:text-[24px] leading-[28px] md:leading-[32px] mb-[16px] md:mb-[20px]">
-                Why Partner with Aulax?
-              </h4>
-              <ul className="flex flex-col gap-[12px] md:gap-[16px]">
-                <li className="flex items-start gap-[10px] md:gap-[12px]">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    stroke="#90ee90"
-                    strokeWidth="2"
-                    className="flex-shrink-0 mt-[2px]"
-                  >
-                    <path d="M16.667 5L7.5 14.167 3.333 10" />
-                  </svg>
-                  <span className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px]">
-                    Reach thousands of local shoppers actively searching for
-                    businesses like yours
-                  </span>
-                </li>
-                <li className="flex items-start gap-[10px] md:gap-[12px]">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    stroke="#90ee90"
-                    strokeWidth="2"
-                    className="flex-shrink-0 mt-[2px]"
-                  >
-                    <path d="M16.667 5L7.5 14.167 3.333 10" />
-                  </svg>
-                  <span className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px]">
-                    Powerful analytics to understand your customer behaviour
-                  </span>
-                </li>
-                <li className="flex items-start gap-[10px] md:gap-[12px]">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    stroke="#90ee90"
-                    strokeWidth="2"
-                    className="flex-shrink-0 mt-[2px]"
-                  >
-                    <path d="M16.667 5L7.5 14.167 3.333 10" />
-                  </svg>
-                  <span className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px]">
-                    No setup fees—only pay for results
-                  </span>
-                </li>
-                <li className="flex items-start gap-[10px] md:gap-[12px]">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    stroke="#90ee90"
-                    strokeWidth="2"
-                    className="flex-shrink-0 mt-[2px]"
-                  >
-                    <path d="M16.667 5L7.5 14.167 3.333 10" />
-                  </svg>
-                  <span className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px]">
-                    Dedicated support from our partnership team
-                  </span>
-                </li>
-              </ul>
-            </div>
+        {/* Download Section */}
+        <div className="flex flex-col gap-[24px] items-center mt-[64px]">
+          <h3 className="font-bold text-[24px] leading-[32px] text-[#1e293b] text-center">
+            Download Aulax and Start Shopping Local
+          </h3>
 
-            {/* Contact Info */}
-            <div className="bg-white rounded-[16px] md:rounded-[24px] p-[20px] md:p-[24px] shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)]">
-              <h4 className="font-semibold text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] text-[#1e293b] mb-[12px] md:mb-[16px]">
-                Prefer to chat?
-              </h4>
-              <p className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] mb-[12px] md:mb-[16px]">
-                Our partnership team is ready to help you get started.
-              </p>
-              <Link
-                href="mailto:partners@aulax.app"
-                className="inline-block font-semibold text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#006a4e] hover:underline"
-              >
-                partners@aulax.app
-              </Link>
-            </div>
+          <div className="flex items-center justify-center gap-[16px]">
+            {/* App Store */}
+            <Link
+              href="#"
+              className="flex items-center bg-black px-[24px] py-[12px] rounded-[12px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-gray-900 transition-colors"
+            >
+              <AppleIcon />
+              <div className="ml-[12px]">
+                <p className="font-normal text-[12px] leading-[16px] text-white">
+                  Download on the
+                </p>
+                <p className="font-semibold text-[18px] leading-[28px] text-white">
+                  App Store
+                </p>
+              </div>
+            </Link>
+
+            {/* Google Play */}
+            <Link
+              href="#"
+              className="flex items-center bg-black px-[24px] py-[12px] rounded-[12px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-gray-900 transition-colors"
+            >
+              <GooglePlayIcon />
+              <div className="ml-[12px]">
+                <p className="font-normal text-[12px] leading-[16px] text-white">
+                  GET IT ON
+                </p>
+                <p className="font-semibold text-[18px] leading-[28px] text-white">
+                  Google Play
+                </p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

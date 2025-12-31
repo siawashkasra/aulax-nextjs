@@ -21,23 +21,20 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[6px] bg-[rgba(255,255,255,0.8)] px-[24px] lg:px-[104px] py-[16px]"
-      style={{ height: "72px" }}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[6px] bg-[rgba(255,255,255,0.8)] h-[72px] px-[104px] py-[16px]">
       <div className="flex items-center justify-between h-[40px]">
         {/* Left side - Logo and Navigation */}
         <div className="flex items-center">
           {/* Logo */}
           <Link
             href="/"
-            className="font-bold text-[24px] leading-[32px] text-[#1e293b] mr-[32px]"
+            className="font-bold text-[24px] leading-[32px] text-[#1e293b]"
           >
             Aulax
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center">
+          <nav className="hidden lg:flex items-center pl-[32px]">
             <Link
               href="#"
               className="px-[12px] py-[8px] text-[14px] font-medium leading-[20px] text-[#374151] rounded-full hover:bg-[rgba(0,0,0,0.05)] transition-colors"

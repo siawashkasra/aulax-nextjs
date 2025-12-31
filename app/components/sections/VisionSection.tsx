@@ -4,137 +4,121 @@ import Link from "next/link";
 export default function VisionSection() {
   return (
     <section
-      className="px-[24px] md:px-[40px] lg:px-[80px] py-[48px] md:py-[64px] lg:py-[96px] relative overflow-hidden"
+      className="px-[104px] py-[96px] relative"
       style={{
-        background:
-          "linear-gradient(151deg, rgba(161, 255, 194, 0.20) 1.44%, rgba(207, 250, 254, 0.30) 100%)",
+        backgroundImage:
+          "linear-gradient(151.19deg, rgba(161, 255, 194, 0.2) 0%, rgba(207, 250, 254, 0.3) 100%)",
       }}
     >
-      <div className="max-w-[1280px] mx-auto px-0 md:px-[24px]">
-        {/* Vision Content */}
-        <div className="flex flex-col gap-[48px] md:gap-[64px]">
-          {/* Top Section - Badge and Header */}
-          <div className="flex flex-col items-center gap-[16px] md:gap-[24px]">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-[8px] bg-[rgba(144,238,144,0.3)] px-[12px] py-[6px] rounded-full">
-              <span className="font-semibold text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#006a4e]">
+      {/* Main Container - two columns with gap-64px */}
+      <div className="flex gap-[64px] items-center justify-center w-full">
+        {/* Left Column - Content */}
+        <div className="flex-1 relative h-[563.5px]">
+          {/* Our Vision Badge */}
+          <div className="absolute top-0 left-0">
+            <div className="bg-[rgba(144,238,144,0.3)] px-[16px] py-[8px] rounded-full">
+              <span className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
                 Our Vision
               </span>
             </div>
-
-            {/* Heading */}
-            <div className="max-w-[896px] text-center">
-              <h2 className="font-bold text-[32px] md:text-[40px] lg:text-[48px] leading-[36px] md:leading-[44px] lg:leading-[48px] text-[#1e293b]">
-                Empowering Local Commerce
-                <br className="hidden sm:block" />
-                with Technology
-              </h2>
-            </div>
           </div>
 
-          {/* Main Content Row */}
-          <div className="flex flex-col lg:flex-row items-center gap-[32px] md:gap-[48px] lg:gap-[64px]">
-            {/* Left Side - Stats */}
-            <div className="flex flex-col gap-[24px] md:gap-[32px] w-full lg:w-auto lg:flex-1 order-2 lg:order-1">
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-[16px] md:gap-[24px]">
-                {/* Stat 1 */}
-                <div className="bg-white rounded-[16px] md:rounded-[24px] p-[16px] md:p-[24px] shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)]">
-                  <p className="font-bold text-[28px] md:text-[36px] leading-[32px] md:leading-[40px] text-[#006a4e]">
-                    1,000+
-                  </p>
-                  <p className="font-medium text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#6b7280] mt-[4px] md:mt-[8px]">
-                    Local Businesses
-                  </p>
-                </div>
-
-                {/* Stat 2 */}
-                <div className="bg-white rounded-[16px] md:rounded-[24px] p-[16px] md:p-[24px] shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)]">
-                  <p className="font-bold text-[28px] md:text-[36px] leading-[32px] md:leading-[40px] text-[#006a4e]">
-                    50K+
-                  </p>
-                  <p className="font-medium text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#6b7280] mt-[4px] md:mt-[8px]">
-                    Active Users
-                  </p>
-                </div>
-
-                {/* Stat 3 */}
-                <div className="bg-white rounded-[16px] md:rounded-[24px] p-[16px] md:p-[24px] shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)]">
-                  <p className="font-bold text-[28px] md:text-[36px] leading-[32px] md:leading-[40px] text-[#006a4e]">
-                    £2M+
-                  </p>
-                  <p className="font-medium text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#6b7280] mt-[4px] md:mt-[8px]">
-                    Savings for Shoppers
-                  </p>
-                </div>
-
-                {/* Stat 4 */}
-                <div className="bg-white rounded-[16px] md:rounded-[24px] p-[16px] md:p-[24px] shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_2px_4px_-2px_rgba(0,0,0,0.1)]">
-                  <p className="font-bold text-[28px] md:text-[36px] leading-[32px] md:leading-[40px] text-[#006a4e]">
-                    10+
-                  </p>
-                  <p className="font-medium text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#6b7280] mt-[4px] md:mt-[8px]">
-                    UK Cities
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side - Image with Decorations */}
-            <div className="relative w-full lg:w-[580px] aspect-[4/3] order-1 lg:order-2">
-              {/* Background Blur Decorations */}
-              <div
-                className="absolute -top-[40px] md:-top-[80px] -right-[40px] md:-right-[80px] w-[100px] md:w-[200px] h-[100px] md:h-[200px] rounded-full opacity-60"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(144, 238, 144, 0.5) 0%, transparent 70%)",
-                  filter: "blur(40px)",
-                }}
-              />
-              <div
-                className="absolute -bottom-[30px] md:-bottom-[60px] -left-[30px] md:-left-[60px] w-[80px] md:w-[150px] h-[80px] md:h-[150px] rounded-full opacity-60"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(207, 250, 254, 0.8) 0%, transparent 70%)",
-                  filter: "blur(30px)",
-                }}
-              />
-
-              {/* Main Image */}
-              <div className="relative w-full h-full rounded-[16px] md:rounded-[24px] overflow-hidden shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)]">
-                <Image
-                  src="/images/vision-local-shop.jpg"
-                  alt="A warm, inviting local shop interior with wooden shelves displaying products"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
+          {/* Heading */}
+          <div className="absolute top-[60px] left-0">
+            <h2 className="font-bold text-[48px] leading-[48px] text-[#1e293b]">
+              Revolutionising the local
+              <br />
+              marketplace
+            </h2>
           </div>
 
-          {/* Bottom CTA Section */}
-          <div className="flex flex-col items-center gap-[16px] md:gap-[24px]">
-            <p className="text-center text-[16px] md:text-[18px] leading-[24px] md:leading-[28px] text-[#4b5563] max-w-[600px]">
-              Join the movement to support local businesses and create a more
-              sustainable shopping experience for everyone.
+          {/* First Paragraph */}
+          <div className="absolute top-[180px] left-0">
+            <p className="font-normal text-[18px] leading-[29.25px] text-[#374151] max-w-[577px]">
+              Aulax is redefining the local marketplace through a ubiquitous
+              connected experience that bridges people and businesses, creating
+              more convenient and personalised shopping journeys.
             </p>
+          </div>
+
+          {/* Second Paragraph */}
+          <div className="absolute top-[283.75px] left-0">
+            <p className="font-normal text-[18px] leading-[29.25px] text-[#374151] max-w-[553px]">
+              It empowers shoppers to find the right value while enabling local
+              businesses to understand and serve their customers with greater
+              care and personalisation.
+            </p>
+          </div>
+
+          {/* Become a Partner Button */}
+          <div className="absolute top-[411.5px] left-0">
             <Link
               href="#partner"
-              className="inline-flex items-center gap-[8px] bg-[#006a4e] text-white px-[20px] md:px-[24px] py-[10px] md:py-[12px] rounded-full font-semibold text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] hover:bg-[#005540] transition-colors"
+              className="inline-block bg-[#1e293b] px-[32px] py-[16px] rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-[#334155] transition-colors"
             >
-              Become a Partner
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M3 8h10M9 4l4 4-4 4" />
-              </svg>
+              <span className="font-bold text-[18px] leading-[28px] text-white">
+                Become a Partner
+              </span>
             </Link>
           </div>
+
+          {/* Stats Row */}
+          <div className="absolute top-[503.5px] left-0 flex gap-[24px] items-start justify-center">
+            {/* Stat 1 - Local Businesses */}
+            <div className="flex flex-col gap-[4px] w-[178.66px]">
+              <span className="font-bold text-[30px] leading-[36px] text-[#006a4e]">
+                100+
+              </span>
+              <span className="font-normal text-[14px] leading-[20px] text-[#4b5563]">
+                Local Businesses
+              </span>
+            </div>
+
+            {/* Stat 2 - Active Shoppers */}
+            <div className="flex flex-col gap-[4px] w-[178.67px]">
+              <span className="font-bold text-[30px] leading-[36px] text-[#006a4e]">
+                150+
+              </span>
+              <span className="font-normal text-[14px] leading-[20px] text-[#4b5563]">
+                Active Shoppers
+              </span>
+            </div>
+
+            {/* Stat 3 - Satisfaction Rate */}
+            <div className="flex flex-col gap-[4px] w-[178.67px]">
+              <span className="font-bold text-[30px] leading-[36px] text-[#006a4e]">
+                99%
+              </span>
+              <span className="font-normal text-[14px] leading-[20px] text-[#4b5563]">
+                Satisfaction Rate
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column - Image */}
+        <div className="flex-1 relative">
+          {/* Main Image Container */}
+          <div className="relative w-full h-[600px] rounded-[24px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
+            <Image
+              src="/images/vision-network.jpg"
+              alt="A vibrant connected digital network visualization overlaying a bustling local marketplace scene"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Bottom-right blur decoration */}
+          <div
+            className="absolute -bottom-[24px] -right-[24px] w-[128px] h-[128px] rounded-[24px] bg-[#90ee90] opacity-50"
+            style={{ filter: "blur(20px)" }}
+          />
+
+          {/* Top-left blur decoration */}
+          <div
+            className="absolute -top-[24px] -left-[24px] w-[160px] h-[160px] rounded-full bg-[#cffafe] opacity-40"
+            style={{ filter: "blur(20px)" }}
+          />
         </div>
       </div>
     </section>

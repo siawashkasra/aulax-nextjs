@@ -1,66 +1,72 @@
 import Link from "next/link";
 
-// Social icons as inline SVGs
-const TwitterIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
-
-const InstagramIcon = () => (
-  <svg width="17.5" height="20" viewBox="0 0 18 20" fill="currentColor">
-    <path d="M9 1.802c2.67 0 2.987.01 4.042.058 2.71.123 3.975 1.409 4.099 4.099.048 1.054.057 1.37.057 4.04 0 2.672-.01 2.988-.057 4.042-.124 2.687-1.387 3.975-4.1 4.099-1.054.048-1.37.058-4.041.058-2.67 0-2.987-.01-4.04-.058-2.717-.124-3.977-1.416-4.1-4.1-.048-1.054-.058-1.37-.058-4.041 0-2.67.01-2.986.058-4.04.124-2.69 1.387-3.977 4.1-4.1 1.054-.047 1.37-.057 4.04-.057zM9 0C6.284 0 5.944.012 4.878.06 1.246.227.228 1.242.06 4.877.012 5.944 0 6.284 0 9s.012 3.057.06 4.123c.167 3.632 1.182 4.65 4.817 4.817.433.02.772.03 1.123.046V18l.002-.002c.002 0 .003 0 .005.002h6.006l.002.002v-.002h.002c.35-.015.689-.025 1.12-.046 3.636-.167 4.65-1.188 4.818-4.82.048-1.065.06-1.405.06-4.122 0-2.717-.012-3.056-.06-4.122C17.773 1.245 16.756.228 13.122.06 12.057.012 11.717 0 9 0z" />
-    <path d="M9 4.378a4.622 4.622 0 100 9.244 4.622 4.622 0 000-9.244zM9 12a3 3 0 110-6 3 3 0 010 6z" />
-    <circle cx="13.804" cy="4.196" r="1.08" />
-  </svg>
-);
-
-const FacebookIcon = () => (
-  <svg width="17.5" height="20" viewBox="0 0 18 20" fill="currentColor">
-    <path d="M18 10.049C18 4.505 13.97.5 8.5.5S-1 4.505-1 10.049c0 4.77 3.44 8.726 7.938 9.451v-6.688H4.898v-2.763h2.04V7.92c0-2.044 1.2-3.173 3.022-3.173.875 0 1.79.159 1.79.159v2.005h-1.008c-.994 0-1.304.626-1.304 1.269v1.53h2.22l-.355 2.763H9.438v6.688C13.936 18.775 18 14.82 18 10.049z" />
-  </svg>
-);
-
-const LinkedInIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-    <path d="M18.335 18.339H15.67v-4.177c0-.996-.02-2.278-1.39-2.278-1.389 0-1.601 1.084-1.601 2.205v4.25h-2.666V7.75h2.56v1.17h.035c.358-.674 1.228-1.387 2.528-1.387 2.7 0 3.2 1.778 3.2 4.091v6.715zM4.67 6.577c-.856 0-1.548-.697-1.548-1.555 0-.857.692-1.554 1.548-1.554s1.547.697 1.547 1.554c0 .858-.691 1.555-1.547 1.555zm1.336 11.762H3.333V7.75h2.673v10.589zM20 0H0v20h20V0z" />
-  </svg>
-);
-
-const YouTubeIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-    <path d="M19.615 5.184c-.228-.857-.896-1.533-1.744-1.764C16.309 3 10 3 10 3s-6.31 0-7.871.42c-.848.231-1.516.907-1.744 1.764C0 6.768 0 10.066 0 10.066s0 3.298.385 4.882c.228.857.896 1.533 1.744 1.764C3.69 17.132 10 17.132 10 17.132s6.31 0 7.871-.42c.848-.231 1.516-.907 1.744-1.764.385-1.584.385-4.882.385-4.882s0-3.298-.385-4.882zM7.977 13.066V7.066l5.227 3-5.227 3z" />
-  </svg>
-);
-
+// Email icon
 const EmailIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-    <path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.217l7 4.2 7-4.2V4a1 1 0 00-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 002 13h12a1 1 0 00.966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z" />
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="#4b5563">
+    <path d="M14 3H2C1.45 3 1 3.45 1 4V12C1 12.55 1.45 13 2 13H14C14.55 13 15 12.55 15 12V4C15 3.45 14.55 3 14 3ZM14 5L8 8.5L2 5V4L8 7.5L14 4V5Z" />
   </svg>
 );
 
+// Location icon
 const LocationIcon = () => (
-  <svg width="12" height="16" viewBox="0 0 12 16" fill="currentColor">
-    <path d="M6 0C2.686 0 0 2.686 0 6c0 5.25 6 10 6 10s6-4.75 6-10c0-3.314-2.686-6-6-6zm0 8a2 2 0 110-4 2 2 0 010 4z" />
+  <svg width="12" height="16" viewBox="0 0 12 16" fill="#4b5563">
+    <path d="M6 0C2.69 0 0 2.69 0 6C0 10.5 6 16 6 16S12 10.5 12 6C12 2.69 9.31 0 6 0ZM6 8C4.9 8 4 7.1 4 6C4 4.9 4.9 4 6 4C7.1 4 8 4.9 8 6C8 7.1 7.1 8 6 8Z" />
+  </svg>
+);
+
+// Twitter/X icon
+const TwitterIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="#4b5563">
+    <path d="M15.27 1.67H18.08L11.94 8.67L19.17 18.33H13.51L9.08 12.5L4.03 18.33H1.21L7.78 10.86L0.83 1.67H6.63L10.63 7.01L15.27 1.67ZM14.27 16.67H15.83L5.83 3.27H4.14L14.27 16.67Z" />
+  </svg>
+);
+
+// Instagram icon
+const InstagramIcon = () => (
+  <svg width="17.5" height="20" viewBox="0 0 18 20" fill="#4b5563">
+    <path d="M9 2.24c2.4 0 2.69.01 3.64.05 2.44.11 3.58 1.27 3.69 3.69.04.95.05 1.24.05 3.64s-.01 2.69-.05 3.64c-.11 2.42-1.25 3.58-3.69 3.69-.95.04-1.24.05-3.64.05s-2.69-.01-3.64-.05c-2.44-.11-3.58-1.27-3.69-3.69C1.63 12.31 1.62 12.02 1.62 9.62s.01-2.69.05-3.64c.11-2.42 1.25-3.58 3.69-3.69C6.31 2.25 6.6 2.24 9 2.24zM9 .38C6.56.38 6.25.39 5.29.43 1.74.6.6 1.74.43 5.29.39 6.25.38 6.56.38 9s.01 2.75.05 3.71c.17 3.55 1.31 4.69 4.86 4.86.96.04 1.27.05 3.71.05s2.75-.01 3.71-.05c3.55-.17 4.69-1.31 4.86-4.86.04-.96.05-1.27.05-3.71s-.01-2.75-.05-3.71c-.17-3.55-1.31-4.69-4.86-4.86C11.75.39 11.44.38 9 .38z" />
+    <path d="M9 4.77a4.85 4.85 0 100 9.7 4.85 4.85 0 000-9.7zm0 8a3.15 3.15 0 110-6.3 3.15 3.15 0 010 6.3z" />
+    <circle cx="14.14" cy="4.48" r="1.13" />
+  </svg>
+);
+
+// Facebook icon
+const FacebookIcon = () => (
+  <svg width="17.5" height="20" viewBox="0 0 18 20" fill="#4b5563">
+    <path d="M18 10.04c0-5.52-4.48-10-10-10s-10 4.48-10 10c0 4.99 3.66 9.12 8.44 9.88v-6.99H4.9v-2.89h2.54V7.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.89h-2.34v6.99C14.34 19.16 18 15.03 18 10.04z" />
+  </svg>
+);
+
+// LinkedIn icon
+const LinkedInIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="#4b5563">
+    <path d="M18.52 0H1.48C.66 0 0 .64 0 1.44v17.12c0 .8.66 1.44 1.48 1.44h17.04c.82 0 1.48-.64 1.48-1.44V1.44C20 .64 19.34 0 18.52 0zM5.93 17H2.97V7.5h2.96V17zM4.45 6.2c-.95 0-1.72-.77-1.72-1.72s.77-1.72 1.72-1.72 1.72.77 1.72 1.72-.77 1.72-1.72 1.72zM17 17h-2.96v-4.62c0-1.1-.02-2.52-1.54-2.52-1.54 0-1.78 1.2-1.78 2.44V17H7.76V7.5h2.84v1.3h.04c.4-.75 1.36-1.54 2.8-1.54 2.99 0 3.54 1.97 3.54 4.53V17z" />
+  </svg>
+);
+
+// YouTube icon
+const YouTubeIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="#4b5563">
+    <path d="M19.58 5.2c-.23-.86-.9-1.53-1.75-1.76C16.25 3 10 3 10 3s-6.25 0-7.83.42c-.85.23-1.52.9-1.75 1.76C0 6.77 0 10.07 0 10.07s0 3.3.42 4.87c.23.86.9 1.53 1.75 1.76 1.58.44 7.83.44 7.83.44s6.25 0 7.83-.44c.85-.23 1.52-.9 1.75-1.76.42-1.57.42-4.87.42-4.87s0-3.3-.42-4.87zM8 13.07V7.07l5.2 3-5.2 3z" />
   </svg>
 );
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f9fafb] pt-[48px] md:pt-[64px] pb-[24px] md:pb-[32px] px-[24px] md:px-[40px] lg:px-[80px]">
-      <div className="max-w-[1280px] mx-auto px-0 md:px-[24px]">
+    <footer className="bg-[#f9fafb] pt-[64px] pb-[32px] px-[80px]">
+      <div className="max-w-[1280px] mx-auto px-[24px]">
         {/* Footer Links */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-[24px] md:gap-[32px] mb-[32px] md:mb-[48px]">
+        <div className="flex gap-[32px] items-start justify-center mb-[48px]">
           {/* Company */}
-          <div>
-            <h4 className="font-semibold text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#1f2937] mb-[12px] md:mb-[16px]">
+          <div className="w-[220.8px] flex flex-col gap-[16px]">
+            <h4 className="font-semibold text-[16px] leading-[24px] text-[#1f2937]">
               Company
             </h4>
-            <ul className="flex flex-col gap-[6px] md:gap-[8px]">
+            <ul className="flex flex-col gap-[8px]">
               <li>
                 <Link
                   href="#"
-                  className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   About us
                 </Link>
@@ -68,7 +74,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Careers
                 </Link>
@@ -76,7 +82,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Press
                 </Link>
@@ -84,7 +90,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Blog
                 </Link>
@@ -93,15 +99,15 @@ export default function Footer() {
           </div>
 
           {/* Aulax Products */}
-          <div>
-            <h4 className="font-semibold text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#1f2937] mb-[12px] md:mb-[16px]">
+          <div className="w-[220.8px] flex flex-col gap-[16px]">
+            <h4 className="font-semibold text-[16px] leading-[24px] text-[#1f2937]">
               Aulax Products
             </h4>
-            <ul className="flex flex-col gap-[6px] md:gap-[8px]">
+            <ul className="flex flex-col gap-[8px]">
               <li>
                 <Link
                   href="#"
-                  className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Personal Account
                 </Link>
@@ -109,7 +115,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Business Account
                 </Link>
@@ -117,7 +123,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Aulax Platform
                 </Link>
@@ -125,7 +131,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Gift Cards
                 </Link>
@@ -134,15 +140,15 @@ export default function Footer() {
           </div>
 
           {/* Resources */}
-          <div>
-            <h4 className="font-semibold text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#1f2937] mb-[12px] md:mb-[16px]">
+          <div className="w-[220.8px] flex flex-col gap-[16px]">
+            <h4 className="font-semibold text-[16px] leading-[24px] text-[#1f2937]">
               Resources
             </h4>
-            <ul className="flex flex-col gap-[6px] md:gap-[8px]">
+            <ul className="flex flex-col gap-[8px]">
               <li>
                 <Link
                   href="#"
-                  className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Help Center
                 </Link>
@@ -150,7 +156,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Community
                 </Link>
@@ -158,7 +164,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Service Status
                 </Link>
@@ -166,7 +172,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   API Docs
                 </Link>
@@ -175,27 +181,23 @@ export default function Footer() {
           </div>
 
           {/* Contact Us */}
-          <div>
-            <h4 className="font-semibold text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#1f2937] mb-[12px] md:mb-[16px]">
+          <div className="w-[220.8px] flex flex-col gap-[16px]">
+            <h4 className="font-semibold text-[16px] leading-[24px] text-[#1f2937]">
               Contact Us
             </h4>
-            <ul className="flex flex-col gap-[6px] md:gap-[8px]">
-              <li className="flex items-center">
-                <span className="text-[#4b5563]">
-                  <EmailIcon />
-                </span>
+            <ul className="flex flex-col gap-[8px]">
+              <li className="flex items-center gap-[8px]">
+                <EmailIcon />
                 <Link
                   href="mailto:enquiry@aulax.app"
-                  className="ml-[8px] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   enquiry@aulax.app
                 </Link>
               </li>
-              <li className="flex items-center">
-                <span className="text-[#4b5563]">
-                  <LocationIcon />
-                </span>
-                <span className="ml-[8px] text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#4b5563]">
+              <li className="flex items-center gap-[8px]">
+                <LocationIcon />
+                <span className="font-normal text-[16px] leading-[24px] text-[#4b5563]">
                   London, UK
                 </span>
               </li>
@@ -203,11 +205,11 @@ export default function Footer() {
           </div>
 
           {/* Follow us */}
-          <div className="col-span-2 md:col-span-1">
-            <h4 className="font-semibold text-[14px] md:text-[16px] leading-[20px] md:leading-[24px] text-[#1f2937] mb-[12px] md:mb-[16px]">
+          <div className="w-[220.81px] flex flex-col gap-[16px]">
+            <h4 className="font-semibold text-[16px] leading-[24px] text-[#1f2937]">
               Follow us
             </h4>
-            <div className="flex items-start gap-[12px] md:gap-[16px]">
+            <div className="flex items-start gap-[16px]">
               <Link
                 href="#"
                 className="text-[#4b5563] hover:text-[#1f2937] transition-colors"
@@ -243,32 +245,32 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#e5e7eb] pt-[24px] md:pt-[33px]">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-[16px]">
+        <div className="border-t border-[#e5e7eb] pt-[33px]">
+          <div className="flex items-center justify-between">
             {/* Left side */}
-            <div className="flex flex-col md:flex-row items-center">
+            <div className="flex items-center">
               <Link
                 href="/"
-                className="font-bold text-[20px] md:text-[24px] leading-[28px] md:leading-[32px] text-[#1e293b]"
+                className="font-bold text-[24px] leading-[32px] text-[#1e293b]"
               >
                 Aulax
               </Link>
-              <div className="flex items-center mt-[12px] md:mt-0 md:ml-[16px] gap-[12px] md:gap-[16px]">
+              <div className="flex items-center ml-[16px] gap-[16px]">
                 <Link
                   href="#"
-                  className="text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[14px] leading-[20px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Legal
                 </Link>
                 <Link
                   href="#"
-                  className="text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[14px] leading-[20px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="#"
-                  className="text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-[14px] leading-[20px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Terms of Service
                 </Link>
@@ -276,7 +278,7 @@ export default function Footer() {
             </div>
 
             {/* Right side */}
-            <p className="text-[12px] md:text-[14px] leading-[16px] md:leading-[20px] text-[#6b7280]">
+            <p className="font-normal text-[14px] leading-[20px] text-[#6b7280]">
               © 2026 Aulax. All rights reserved.
             </p>
           </div>
