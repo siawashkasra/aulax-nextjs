@@ -4,6 +4,7 @@ import HeroSection from "./components/sections/HeroSection";
 import VisionSection from "./components/sections/VisionSection";
 import WhyAulaxSection from "./components/sections/WhyAulaxSection";
 import NominateSection from "./components/sections/NominateSection";
+import NominateFormSection from "./components/sections/NominateFormSection";
 import VideoShowcaseSection from "./components/sections/VideoShowcaseSection";
 import PartnershipSection from "./components/sections/PartnershipSection";
 import ForBusinessSection from "./components/sections/ForBusinessSection";
@@ -21,8 +22,9 @@ export default function Home() {
         <WhyAulaxSection />
         <VideoShowcaseSection />
         <NominateSection />
-        <PartnershipSection />
+        <NominateFormSection />
         <ForBusinessSection />
+        <PartnershipSection />
         <ConvenientShoppingSection />
         <AppShowcaseSection />
         <CTASection />
