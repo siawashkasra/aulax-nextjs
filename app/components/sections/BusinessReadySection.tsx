@@ -7,8 +7,8 @@ export default function BusinessReadySection() {
         {/* Image Container */}
         <div className="flex-1 flex items-start justify-center">
           <img
-            src="/images/business-illustration.png"
-            alt="Various business types illustration"
+            src="/images/ready-for-businesses-of-all-sizes.png"
+            alt="Ready for businesses of all sizes"
             className="self-stretch w-[448px] max-w-[448px] max-h-full object-cover"
           />
         </div>

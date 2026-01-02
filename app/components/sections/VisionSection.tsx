@@ -101,8 +101,8 @@ export default function VisionSection() {
           {/* Main Image Container */}
           <div className="relative w-full h-[600px] rounded-[24px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
             <Image
-              src="/images/vision-network.jpg"
-              alt="A vibrant connected digital network visualization overlaying a bustling local marketplace scene"
+              src="/images/vision-section.png"
+              alt="Our Vision - Revolutionising the local marketplace"
               fill
               className="object-cover"
             />

@@ -109,16 +109,22 @@ export default function HeroSection() {
             </div>
 
             {/* Brand Logos Section - mt-64px, gap-32px between text and logos */}
-            <div className="mt-[64px]">
+            <div className="mt-[64px] pb-[96px]">
               <p className="text-center font-semibold text-[14px] leading-[20px] text-[#6b7280] uppercase tracking-[0.35px] mb-[32px]">
                 Trusted by leading UK businesses
               </p>
 
-              {/* Brand logos container - gap-48px, opacity-60, mix-blend-saturation */}
-              <div className="flex items-center justify-center gap-[48px] opacity-60" style={{ mixBlendMode: 'saturation' }}>
+              {/* Brand logos container - gap-48px, opacity-60, grayscale */}
+              <div className="flex items-center justify-center gap-[48px] opacity-60 grayscale">
                 {/* Tesco */}
                 <div className="flex items-center h-[48px]">
-                  <div className="w-[27px] h-[36px] bg-[#374151] rounded" />
+                  <Image
+                    src="/icons/tesco.svg"
+                    alt="Tesco"
+                    width={27}
+                    height={36}
+                    className="object-contain"
+                  />
                   <span className="ml-[12px] font-bold text-[24px] leading-[32px] text-[#374151]">
                     Tesco
                   </span>
@@ -126,7 +132,13 @@ export default function HeroSection() {
 
                 {/* Sainsbury's */}
                 <div className="flex items-center h-[48px]">
-                  <div className="w-[40.5px] h-[36px] bg-[#374151] rounded" />
+                  <Image
+                    src="/icons/sainsbury's.svg"
+                    alt="Sainsbury's"
+                    width={40}
+                    height={36}
+                    className="object-contain"
+                  />
                   <span className="ml-[12px] font-bold text-[24px] leading-[32px] text-[#374151]">
                     Sainsbury&apos;s
                   </span>
@@ -134,7 +146,13 @@ export default function HeroSection() {
 
                 {/* Waitrose */}
                 <div className="flex items-center h-[48px]">
-                  <div className="w-[40.5px] h-[36px] bg-[#374151] rounded" />
+                  <Image
+                    src="/icons/waitrose.svg"
+                    alt="Waitrose"
+                    width={40}
+                    height={36}
+                    className="object-contain"
+                  />
                   <span className="ml-[12px] font-bold text-[24px] leading-[32px] text-[#374151]">
                     Waitrose
                   </span>
@@ -142,7 +160,13 @@ export default function HeroSection() {
 
                 {/* Co-op */}
                 <div className="flex items-center h-[48px]">
-                  <div className="w-[45px] h-[36px] bg-[#374151] rounded" />
+                  <Image
+                    src="/icons/co-up.svg"
+                    alt="Co-op"
+                    width={45}
+                    height={36}
+                    className="object-contain"
+                  />
                   <span className="ml-[12px] font-bold text-[24px] leading-[32px] text-[#374151]">
                     Co-op
                   </span>
@@ -150,7 +174,13 @@ export default function HeroSection() {
 
                 {/* Morrisons */}
                 <div className="flex items-center h-[48px]">
-                  <div className="w-[40.5px] h-[36px] bg-[#374151] rounded" />
+                  <Image
+                    src="/icons/morrisons.svg"
+                    alt="Morrisons"
+                    width={40}
+                    height={36}
+                    className="object-contain"
+                  />
                   <span className="ml-[12px] font-bold text-[24px] leading-[32px] text-[#374151]">
                     Morrisons
                   </span>
@@ -158,7 +188,13 @@ export default function HeroSection() {
 
                 {/* Boots */}
                 <div className="flex items-center h-[48px]">
-                  <div className="w-[40.5px] h-[36px] bg-[#374151] rounded" />
+                  <Image
+                    src="/icons/SVG (6).svg"
+                    alt="Boots"
+                    width={40}
+                    height={36}
+                    className="object-contain"
+                  />
                   <span className="ml-[12px] font-bold text-[24px] leading-[32px] text-[#374151]">
                     Boots
                   </span>

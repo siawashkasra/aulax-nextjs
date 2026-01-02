@@ -40,8 +40,8 @@ export default function TrustSection() {
         {/* Image Container */}
         <div className="flex-1 flex items-start justify-center">
           <img
-            src="/images/trust-illustration.png"
-            alt="Trust and security illustration"
+            src="/images/your-trust-is-our-priority.png"
+            alt="Your trust is our priority"
             className="h-[256px] w-[256px] object-cover max-w-[528px]"
           />
         </div>

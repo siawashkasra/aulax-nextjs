@@ -31,12 +31,13 @@ export default function AppShowcaseSection() {
           {/* Feature 1 - Single hub */}
           <div className="flex gap-[48px] items-center justify-center">
             {/* Left - Image */}
-            <div className="flex-1 h-[384px] rounded-[16px] overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-[#90ee90] to-[#006a4e] flex items-center justify-center">
-                <span className="text-white/50 text-[14px]">
-                  Shopping Dashboard Image
-                </span>
-              </div>
+            <div className="flex-1 h-[384px] rounded-[16px] overflow-hidden relative">
+              <Image
+                src="/images/a-single-hub-for-all-your-local-shopping.png"
+                alt="A single hub for all your local shopping"
+                fill
+                className="object-cover"
+              />
             </div>
 
             {/* Right - Content */}
@@ -95,11 +96,12 @@ export default function AppShowcaseSection() {
 
             {/* Right - Image */}
             <div className="absolute right-0 top-0 w-[calc(50%-24px)] h-[384px] rounded-[16px] overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-[#cffafe] to-[#006a4e] flex items-center justify-center">
-                <span className="text-white/50 text-[14px]">
-                  Person Using App Image
-                </span>
-              </div>
+              <Image
+                src="/images/get-recommendations-tailored-for-you.png"
+                alt="Get recommendations tailored for you"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
