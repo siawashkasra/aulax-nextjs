@@ -165,7 +165,7 @@ export default function WhyAulaxSection() {
               "Order ahead for quick pickup",
               "Skip the lines and save time",
             ]}
-            imageSrc="/images/shop-smarter.jpg"
+            imageSrc="/images/Shop-Smarter-Faster.jpg"
             imageAlt="Person checking product availability on smartphone in a local store aisle"
             imageFirst={true}
           />
@@ -180,7 +180,7 @@ export default function WhyAulaxSection() {
               "Loyalty rewards that grow with you",
               "Flash deals from favorite stores",
             ]}
-            imageSrc="/images/offers.jpg"
+            imageSrc="/images/Exclusive-Offers.jpg"
             imageAlt="Mobile phone screen displaying personalized shopping offers and deals"
             imageFirst={false}
           />
@@ -195,7 +195,7 @@ export default function WhyAulaxSection() {
               "Read authentic community reviews",
               "Support local businesses easily",
             ]}
-            imageSrc="/images/discover-gems.jpg"
+            imageSrc="/images/DiscoverLocalGems.jpg"
             imageAlt="Overhead view of a neighborhood map with colorful pins marking local shops"
             imageFirst={true}
           />
@@ -210,7 +210,7 @@ export default function WhyAulaxSection() {
               "Track all your rewards in one place",
               "Redeem at participating stores",
             ]}
-            imageSrc="/images/earn-rewards.jpg"
+            imageSrc="/images/EarnRewards.jpg"
             imageAlt="Digital wallet interface showing cashback rewards and points accumulation"
             imageFirst={false}
           />
