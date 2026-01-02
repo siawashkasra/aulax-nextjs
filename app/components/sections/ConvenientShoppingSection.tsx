@@ -1,17 +1,30 @@
-import Image from "next/image";
 import Link from "next/link";
 
 // Chevron down icon
 const ChevronDownIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="#1f2937">
-    <path d="M3.5 5.25L7 8.75l3.5-3.5" stroke="#1f2937" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path
+      d="M3.5 5.25L7 8.75l3.5-3.5"
+      stroke="#1f2937"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
   </svg>
 );
 
 // Verified checkmark icon
 const VerifiedIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="#006a4e">
-    <path d="M5.25 7l1.75 1.75 3.5-3.5" stroke="#006a4e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path
+      d="M5.25 7l1.75 1.75 3.5-3.5"
+      stroke="#006a4e"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
     <circle cx="7" cy="7" r="6" stroke="#006a4e" strokeWidth="1" fill="none" />
   </svg>
 );
@@ -25,47 +38,49 @@ const InstantIcon = () => (
 
 export default function ConvenientShoppingSection() {
   return (
-    <section className="px-[80px] py-[96px] bg-[#eaffe2]">
-      <div className="max-w-[1280px] mx-auto px-[24px]">
-        <div className="flex gap-[48px] items-center justify-center">
+    <section className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-12 md:py-16 lg:py-24 bg-[#eaffe2]">
+      <div className="max-w-[1280px] mx-auto">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-center justify-center">
           {/* Left - Text Content */}
-          <div className="flex-1 flex flex-col gap-[16px]">
-            <h2 className="font-bold text-[36px] leading-[40px] text-[#1e293b]">
+          <div className="flex-1 flex flex-col gap-4 text-center lg:text-left">
+            <h2 className="font-bold text-2xl sm:text-3xl lg:text-4xl leading-tight text-[#1e293b]">
               Convenient, personalized shopping
             </h2>
 
-            <div className="pb-[16px]">
-              <p className="font-normal text-[18px] leading-[28px] text-[#374151]">
-                Use our platform to find exactly what you&apos;re looking for from
-                local sellers. Whether you need fresh produce, handmade crafts,
-                or unique services, we connect you in seconds.
+            <div className="pb-2 md:pb-4">
+              <p className="font-normal text-base md:text-lg leading-relaxed text-[#374151]">
+                Use our platform to find exactly what you&apos;re looking for
+                from local sellers. Whether you need fresh produce, handmade
+                crafts, or unique services, we connect you in seconds.
               </p>
             </div>
 
-            <Link
-              href="#"
-              className="inline-block bg-[#1e293b] text-white font-bold text-[16px] leading-[24px] px-[32px] py-[12px] rounded-full w-fit hover:bg-[#334155] transition-colors"
-            >
-              Learn how to shop
-            </Link>
+            <div className="flex justify-center lg:justify-start">
+              <Link
+                href="#"
+                className="inline-block bg-[#1e293b] text-white font-bold text-base leading-6 px-6 md:px-8 py-3 rounded-full hover:bg-[#334155] transition-colors min-h-[44px]"
+              >
+                Learn how to shop
+              </Link>
+            </div>
           </div>
 
           {/* Right - Search Card */}
-          <div className="flex-1 bg-white rounded-[16px] p-[24px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
+          <div className="flex-1 w-full max-w-[500px] lg:max-w-none bg-white rounded-2xl p-4 sm:p-6 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
             {/* Search Query Section */}
-            <div className="border-b border-[#e5e7eb] pb-[17px] flex flex-col gap-[8.5px]">
-              <span className="font-medium text-[14px] leading-[20px] text-[#6b7280]">
+            <div className="border-b border-[#e5e7eb] pb-4 flex flex-col gap-2">
+              <span className="font-medium text-sm leading-5 text-[#6b7280]">
                 You&apos;re looking for
               </span>
-              <div className="flex items-center justify-between">
-                <span className="font-semibold text-[24px] leading-[32px] text-[#1f2937]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span className="font-semibold text-xl sm:text-2xl leading-8 text-[#1f2937]">
                   Artisanal Bread
                 </span>
-                <div className="flex items-center gap-[8px]">
-                  <div className="w-[32px] h-[32px] rounded-full overflow-hidden bg-red-100 flex items-center justify-center">
-                    <span className="text-[20px]">🍁</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full overflow-hidden bg-red-100 flex items-center justify-center">
+                    <span className="text-lg sm:text-xl">🍁</span>
                   </div>
-                  <span className="font-semibold text-[20px] leading-[28px] text-[#1f2937]">
+                  <span className="font-semibold text-lg sm:text-xl leading-7 text-[#1f2937]">
                     CAD
                   </span>
                   <ChevronDownIcon />
@@ -74,19 +89,19 @@ export default function ConvenientShoppingSection() {
             </div>
 
             {/* Location Section */}
-            <div className="pt-[16px] flex flex-col gap-[8.5px]">
-              <span className="font-medium text-[14px] leading-[20px] text-[#6b7280]">
+            <div className="pt-4 flex flex-col gap-2">
+              <span className="font-medium text-sm leading-5 text-[#6b7280]">
                 Your location
               </span>
-              <div className="flex items-center justify-between">
-                <span className="font-semibold text-[24px] leading-[32px] text-[#1f2937]">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span className="font-semibold text-xl sm:text-2xl leading-8 text-[#1f2937]">
                   Toronto, ON
                 </span>
-                <div className="flex items-center gap-[8px]">
-                  <div className="w-[32px] h-[32px] rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
-                    <span className="text-[20px]">📍</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                    <span className="text-lg sm:text-xl">📍</span>
                   </div>
-                  <span className="font-semibold text-[20px] leading-[28px] text-[#1f2937]">
+                  <span className="font-semibold text-lg sm:text-xl leading-7 text-[#1f2937]">
                     Local
                   </span>
                   <ChevronDownIcon />
@@ -95,23 +110,23 @@ export default function ConvenientShoppingSection() {
             </div>
 
             {/* Features Row */}
-            <div className="flex items-center justify-between py-[15.5px]">
-              <div className="flex items-center gap-[4px]">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 py-4">
+              <div className="flex items-center gap-1">
                 <VerifiedIcon />
-                <span className="font-normal text-[14px] leading-[20px] text-[#4b5563]">
+                <span className="font-normal text-sm leading-5 text-[#4b5563]">
                   Verified sellers
                 </span>
               </div>
-              <div className="flex items-center gap-[4px]">
+              <div className="flex items-center gap-1">
                 <InstantIcon />
-                <span className="font-normal text-[14px] leading-[20px] text-[#4b5563]">
+                <span className="font-normal text-sm leading-5 text-[#4b5563]">
                   Instant results
                 </span>
               </div>
             </div>
 
             {/* Search Button */}
-            <button className="w-full bg-[#90ee90] text-[#1e293b] font-bold text-[18px] leading-[28px] py-[16px] rounded-full hover:bg-[#7de47d] transition-colors">
+            <button className="w-full bg-[#90ee90] text-[#1e293b] font-bold text-base md:text-lg leading-7 py-3 md:py-4 rounded-full hover:bg-[#7de47d] transition-colors min-h-[44px]">
               Find Businesses
             </button>
           </div>
@@ -120,4 +135,3 @@ export default function ConvenientShoppingSection() {
     </section>
   );
 }
-

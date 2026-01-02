@@ -21,44 +21,45 @@ const GooglePlayIcon = () => (
 export default function HeroSection() {
   return (
     <section className="bg-white pt-[72px]">
-      {/* Main Content Container - matches Figma px-[80px] */}
-      <div className="relative px-[80px]">
+      {/* Main Content Container - responsive padding */}
+      <div className="relative px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20">
         <div className="max-w-[1280px] mx-auto">
-          {/* Hero Content - Inner container with px-[24px] */}
-          <div className="px-[24px]">
-            {/* Heading Container - top padding 96px, gap 24px between elements */}
-            <div className="flex flex-col items-center gap-[24px] pt-[96px]">
-              {/* Main Heading - max-w-896px */}
+          {/* Hero Content - Inner container */}
+          <div className="px-0 md:px-6">
+            {/* Heading Container - responsive padding and gap */}
+            <div className="flex flex-col items-center gap-4 md:gap-6 pt-12 md:pt-16 lg:pt-24">
+              {/* Main Heading - responsive typography */}
               <div className="max-w-[896px] text-center">
-                <h1 className="font-extrabold text-[60px] leading-[60px] text-[#1e293b]">
+                <h1 className="font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-[60px] lg:leading-[60px] text-[#1e293b]">
                   Connecting You to the Local
-                  <br />
+                  <br className="hidden sm:block" />
+                  <span className="sm:hidden"> </span>
                   Marketplace
                 </h1>
               </div>
 
-              {/* Subtitle - max-w-672px */}
-              <div className="max-w-[672px] text-center">
-                <p className="font-normal text-[18px] leading-[28px] text-[#4b5563]">
+              {/* Subtitle - responsive */}
+              <div className="max-w-[672px] text-center px-4 sm:px-0">
+                <p className="font-normal text-base md:text-lg leading-6 md:leading-7 text-[#4b5563]">
                   Explore your local market with excitement! Aulax makes it easy and fun to
                   discover nearby shops and amazing deals at your favourite stores.
                 </p>
               </div>
 
-              {/* CTA Button Container - pt-16px */}
-              <div className="pt-[16px]">
+              {/* CTA Button Container */}
+              <div className="pt-2 md:pt-4">
                 <Link
                   href="#contact"
-                  className="inline-block bg-[#90ee90] px-[32px] py-[12px] rounded-full font-bold text-[18px] leading-[28px] text-[#1e293b] text-center hover:bg-[#7de87d] transition-colors"
+                  className="inline-block bg-[#90ee90] px-6 md:px-8 py-3 rounded-full font-bold text-base md:text-lg leading-6 md:leading-7 text-[#1e293b] text-center hover:bg-[#7de87d] transition-colors min-h-[44px]"
                 >
                   Let&apos;s talk now!
                 </Link>
               </div>
             </div>
 
-            {/* Hero Image Container - mt calculated to position at 436px from section top */}
-            <div className="mt-[48px]">
-              <div className="relative w-full h-[500px] rounded-[16px] overflow-hidden shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
+            {/* Hero Image Container - responsive height */}
+            <div className="mt-8 md:mt-12">
+              <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] md:aspect-[16/8] lg:h-[500px] lg:aspect-auto rounded-xl md:rounded-2xl overflow-hidden shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
                 <Image
                   src="/images/A vibrant, multicultural group of friends shopping at a bustling outdoor local market, smiling and interacting with vendors, cinematic style.png"
                   alt="A vibrant, multicultural group of friends shopping at a bustling outdoor local market"
@@ -67,39 +68,39 @@ export default function HeroSection() {
                   priority
                 />
 
-                {/* App Store Badges - positioned at bottom-32px, centered */}
-                <div className="absolute bottom-[32px] left-1/2 -translate-x-1/2 flex items-center">
+                {/* App Store Badges - responsive positioning and layout */}
+                <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
                   {/* App Store */}
                   <Link
                     href="#"
-                    className="flex items-center bg-black px-[16px] py-[8px] rounded-[8px] hover:bg-[#333] transition-colors"
+                    className="flex items-center bg-black px-4 py-2 rounded-lg hover:bg-[#333] transition-colors min-h-[44px]"
                   >
-                    <div className="w-[18px] h-[24px]">
+                    <div className="w-[18px] h-[24px] flex-shrink-0">
                       <AppleIcon />
                     </div>
-                    <div className="ml-[8px]">
-                      <p className="font-normal text-[12px] leading-[16px] text-white">
+                    <div className="ml-2">
+                      <p className="font-normal text-[10px] sm:text-xs leading-4 text-white">
                         Download on the
                       </p>
-                      <p className="font-semibold text-[18px] leading-[28px] text-white">
+                      <p className="font-semibold text-sm sm:text-lg leading-5 sm:leading-7 text-white">
                         App Store
                       </p>
                     </div>
                   </Link>
 
-                  {/* Google Play - ml-16px gap */}
+                  {/* Google Play */}
                   <Link
                     href="#"
-                    className="flex items-center bg-black px-[16px] py-[8px] rounded-[8px] ml-[16px] hover:bg-[#333] transition-colors"
+                    className="flex items-center bg-black px-4 py-2 rounded-lg hover:bg-[#333] transition-colors min-h-[44px]"
                   >
-                    <div className="w-[20px] h-[20px]">
+                    <div className="w-5 h-5 flex-shrink-0">
                       <GooglePlayIcon />
                     </div>
-                    <div className="ml-[8px]">
-                      <p className="font-normal text-[12px] leading-[16px] text-white">
+                    <div className="ml-2">
+                      <p className="font-normal text-[10px] sm:text-xs leading-4 text-white">
                         GET IT ON
                       </p>
-                      <p className="font-semibold text-[18px] leading-[28px] text-white">
+                      <p className="font-semibold text-sm sm:text-lg leading-5 sm:leading-7 text-white">
                         Google Play
                       </p>
                     </div>
@@ -108,94 +109,94 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Brand Logos Section - mt-64px, gap-32px between text and logos */}
-            <div className="mt-[64px] pb-[96px]">
-              <p className="text-center font-semibold text-[14px] leading-[20px] text-[#6b7280] uppercase tracking-[0.35px] mb-[32px]">
+            {/* Brand Logos Section - responsive */}
+            <div className="mt-12 md:mt-16 pb-12 md:pb-16 lg:pb-24">
+              <p className="text-center font-semibold text-xs md:text-sm leading-5 text-[#6b7280] uppercase tracking-wider mb-6 md:mb-8">
                 Trusted by leading UK businesses
               </p>
 
-              {/* Brand logos container - gap-48px, opacity-60, grayscale */}
-              <div className="flex items-center justify-center gap-[48px] opacity-60 grayscale">
+              {/* Brand logos container - responsive grid */}
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 opacity-60 grayscale px-4">
                 {/* Tesco */}
-                <div className="flex items-center h-[48px]">
+                <div className="flex items-center h-10 md:h-12">
                   <Image
                     src="/icons/tesco.svg"
                     alt="Tesco"
                     width={27}
                     height={36}
-                    className="object-contain"
+                    className="object-contain w-5 md:w-7 h-auto"
                   />
-                  <span className="ml-[12px] font-bold text-[24px] leading-[32px] text-[#374151]">
+                  <span className="ml-2 md:ml-3 font-bold text-lg md:text-2xl leading-7 md:leading-8 text-[#374151]">
                     Tesco
                   </span>
                 </div>
 
                 {/* Sainsbury's */}
-                <div className="flex items-center h-[48px]">
+                <div className="flex items-center h-10 md:h-12">
                   <Image
                     src="/icons/sainsbury's.svg"
                     alt="Sainsbury's"
                     width={40}
                     height={36}
-                    className="object-contain"
+                    className="object-contain w-7 md:w-10 h-auto"
                   />
-                  <span className="ml-[12px] font-bold text-[24px] leading-[32px] text-[#374151]">
+                  <span className="ml-2 md:ml-3 font-bold text-lg md:text-2xl leading-7 md:leading-8 text-[#374151]">
                     Sainsbury&apos;s
                   </span>
                 </div>
 
-                {/* Waitrose */}
-                <div className="flex items-center h-[48px]">
+                {/* Waitrose - hidden on very small screens */}
+                <div className="hidden sm:flex items-center h-10 md:h-12">
                   <Image
                     src="/icons/waitrose.svg"
                     alt="Waitrose"
                     width={40}
                     height={36}
-                    className="object-contain"
+                    className="object-contain w-7 md:w-10 h-auto"
                   />
-                  <span className="ml-[12px] font-bold text-[24px] leading-[32px] text-[#374151]">
+                  <span className="ml-2 md:ml-3 font-bold text-lg md:text-2xl leading-7 md:leading-8 text-[#374151]">
                     Waitrose
                   </span>
                 </div>
 
-                {/* Co-op */}
-                <div className="flex items-center h-[48px]">
+                {/* Co-op - hidden on mobile */}
+                <div className="hidden md:flex items-center h-10 md:h-12">
                   <Image
                     src="/icons/co-up.svg"
                     alt="Co-op"
                     width={45}
                     height={36}
-                    className="object-contain"
+                    className="object-contain w-8 md:w-11 h-auto"
                   />
-                  <span className="ml-[12px] font-bold text-[24px] leading-[32px] text-[#374151]">
+                  <span className="ml-2 md:ml-3 font-bold text-lg md:text-2xl leading-7 md:leading-8 text-[#374151]">
                     Co-op
                   </span>
                 </div>
 
-                {/* Morrisons */}
-                <div className="flex items-center h-[48px]">
+                {/* Morrisons - hidden on tablet and below */}
+                <div className="hidden lg:flex items-center h-10 md:h-12">
                   <Image
                     src="/icons/morrisons.svg"
                     alt="Morrisons"
                     width={40}
                     height={36}
-                    className="object-contain"
+                    className="object-contain w-7 md:w-10 h-auto"
                   />
-                  <span className="ml-[12px] font-bold text-[24px] leading-[32px] text-[#374151]">
+                  <span className="ml-2 md:ml-3 font-bold text-lg md:text-2xl leading-7 md:leading-8 text-[#374151]">
                     Morrisons
                   </span>
                 </div>
 
-                {/* Boots */}
-                <div className="flex items-center h-[48px]">
+                {/* Boots - hidden on tablet and below */}
+                <div className="hidden lg:flex items-center h-10 md:h-12">
                   <Image
                     src="/icons/SVG (6).svg"
                     alt="Boots"
                     width={40}
                     height={36}
-                    className="object-contain"
+                    className="object-contain w-7 md:w-10 h-auto"
                   />
-                  <span className="ml-[12px] font-bold text-[24px] leading-[32px] text-[#374151]">
+                  <span className="ml-2 md:ml-3 font-bold text-lg md:text-2xl leading-7 md:leading-8 text-[#374151]">
                     Boots
                   </span>
                 </div>

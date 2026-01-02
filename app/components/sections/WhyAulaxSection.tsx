@@ -48,346 +48,227 @@ const LeafIcon = () => (
   </svg>
 );
 
+// Feature Card Component for reusability
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  checkItems: string[];
+  imageSrc: string;
+  imageAlt: string;
+  imageFirst?: boolean;
+}
+
+function FeatureCard({
+  icon,
+  title,
+  description,
+  checkItems,
+  imageSrc,
+  imageAlt,
+  imageFirst = false,
+}: FeatureCardProps) {
+  const content = (
+    <div className="flex-1 flex flex-col gap-4 md:gap-6">
+      {/* Icon */}
+      <div className="w-12 h-12 md:w-16 md:h-16 bg-[#006a4e] rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
+        {icon}
+      </div>
+
+      {/* Heading */}
+      <h3 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight text-[#1e293b]">
+        {title}
+      </h3>
+
+      {/* Description */}
+      <p className="font-normal text-base md:text-lg lg:text-xl leading-relaxed text-[#374151]">
+        {description}
+      </p>
+
+      {/* List */}
+      <div className="flex flex-col gap-3 md:gap-4">
+        {checkItems.map((item, index) => (
+          <div key={index} className="flex items-start">
+            <div className="pt-1 flex-shrink-0">
+              <CheckIcon />
+            </div>
+            <span className="ml-3 font-normal text-base md:text-lg leading-7 text-[#374151]">
+              {item}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  const image = (
+    <div className="flex-1 aspect-[4/3] md:aspect-[3/4] lg:h-[400px] xl:h-[500px] lg:aspect-auto rounded-2xl lg:rounded-3xl overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
+      <div className="relative w-full h-full">
+        <Image src={imageSrc} alt={imageAlt} fill className="object-cover" />
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 items-center justify-center">
+      {imageFirst ? (
+        <>
+          <div className="w-full lg:flex-1 order-2 lg:order-1">{image}</div>
+          <div className="w-full lg:flex-1 order-1 lg:order-2">{content}</div>
+        </>
+      ) : (
+        <>
+          <div className="w-full lg:flex-1">{content}</div>
+          <div className="w-full lg:flex-1">{image}</div>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function WhyAulaxSection() {
   return (
     <section
       id="why-aulax"
-      className="bg-white px-[80px] py-[96px]"
+      className="bg-white px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-12 md:py-16 lg:py-24"
     >
-      <div className="max-w-[1280px] mx-auto px-[24px]">
+      <div className="max-w-[1280px] mx-auto">
         {/* Header Section */}
-        <div className="relative h-[152px] mb-[64px]">
-          {/* Why Aulax? Badge - centered */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2">
-            <div className="bg-[rgba(144,238,144,0.3)] px-[16px] py-[8px] rounded-full">
-              <span className="font-semibold text-[14px] leading-[20px] text-[#1e293b] text-center">
-                Why Aulax?
-              </span>
-            </div>
+        <div className="flex flex-col items-center gap-4 md:gap-6 mb-12 md:mb-16">
+          {/* Why Aulax? Badge */}
+          <div className="bg-[rgba(144,238,144,0.3)] px-4 py-2 rounded-full">
+            <span className="font-semibold text-sm leading-5 text-[#1e293b]">
+              Why Aulax?
+            </span>
           </div>
 
-          {/* User Benefits Heading - centered */}
-          <div className="absolute top-[60px] left-0 right-0 flex justify-center">
-            <h2 className="font-bold text-[48px] leading-[48px] text-[#1e293b] text-center">
-              User Benefits
-            </h2>
-          </div>
+          {/* User Benefits Heading */}
+          <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-[#1e293b] text-center">
+            User Benefits
+          </h2>
 
-          {/* Subtitle - centered */}
-          <div className="absolute top-[124px] left-[232px] right-[232px] flex justify-center">
-            <p className="font-normal text-[18px] leading-[28px] text-[#4b5563] text-center">
-              Experience smarter, faster, and more personalized local shopping
-            </p>
-          </div>
+          {/* Subtitle */}
+          <p className="font-normal text-base md:text-lg leading-7 text-[#4b5563] text-center max-w-[600px] px-4">
+            Experience smarter, faster, and more personalized local shopping
+          </p>
         </div>
 
         {/* Feature Cards Container */}
-        <div className="flex flex-col gap-[128px]">
-          {/* Feature 1 - Shop Smarter, Faster (Image Left) */}
-          <div className="flex gap-[64px] items-center justify-center">
-            {/* Image */}
-            <div className="flex-1 h-[500px] rounded-[24px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/shop-smarter.jpg"
-                  alt="Person checking product availability on smartphone in a local store aisle"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
+        <div className="flex flex-col gap-16 md:gap-20 lg:gap-32">
+          {/* Feature 1 - Shop Smarter, Faster */}
+          <FeatureCard
+            icon={<ShopIcon />}
+            title="Shop Smarter, Faster"
+            description="Check stock before you go and order ahead so your items are ready when you arrive. No more wasted trips or waiting in line just grab and go!"
+            checkItems={[
+              "Real-time inventory checking",
+              "Order ahead for quick pickup",
+              "Skip the lines and save time",
+            ]}
+            imageSrc="/images/shop-smarter.jpg"
+            imageAlt="Person checking product availability on smartphone in a local store aisle"
+            imageFirst={true}
+          />
 
-            {/* Content */}
-            <div className="flex-1 flex flex-col gap-[24px]">
-              {/* Icon */}
-              <div className="w-[64px] h-[64px] bg-[#006a4e] rounded-[16px] flex items-center justify-center">
-                <ShopIcon />
-              </div>
+          {/* Feature 2 - Exclusive Offers */}
+          <FeatureCard
+            icon={<OffersIcon />}
+            title="Exclusive Offers"
+            description="Get personalized deals and rewards from your favorite local shops. The more you shop, the better the offers—tailored to what you love!"
+            checkItems={[
+              "Exclusive personalized discounts",
+              "Loyalty rewards that grow with you",
+              "Flash deals from favorite stores",
+            ]}
+            imageSrc="/images/offers.jpg"
+            imageAlt="Mobile phone screen displaying personalized shopping offers and deals"
+            imageFirst={false}
+          />
 
-              {/* Heading */}
-              <h3 className="font-bold text-[36px] leading-[40px] text-[#1e293b]">
-                Shop Smarter, Faster
-              </h3>
+          {/* Feature 3 - Discover Local Gems */}
+          <FeatureCard
+            icon={<MapIcon />}
+            title="Discover Local Gems"
+            description="Find hidden treasures in your neighborhood with real insights from your community. Explore new shops, read authentic reviews, and support local businesses you'll love."
+            checkItems={[
+              "Discover hidden neighborhood shops",
+              "Read authentic community reviews",
+              "Support local businesses easily",
+            ]}
+            imageSrc="/images/discover-gems.jpg"
+            imageAlt="Overhead view of a neighborhood map with colorful pins marking local shops"
+            imageFirst={true}
+          />
 
-              {/* Description */}
-              <p className="font-normal text-[20px] leading-[32.5px] text-[#374151]">
-                Check stock before you go and order ahead so your items
-                are ready when you arrive. No more wasted trips or waiting in
-                line just grab and go!
-              </p>
-
-              {/* List */}
-              <div className="flex flex-col gap-[16px]">
-                <div className="flex items-start">
-                  <div className="pt-[4px]">
-                    <CheckIcon />
-                  </div>
-                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
-                    Real-time inventory checking
-                  </span>
-                </div>
-                <div className="flex items-start">
-                  <div className="pt-[4px]">
-                    <CheckIcon />
-                  </div>
-                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
-                    Order ahead for quick pickup
-                  </span>
-                </div>
-                <div className="flex items-start">
-                  <div className="pt-[4px]">
-                    <CheckIcon />
-                  </div>
-                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
-                    Skip the lines and save time
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Feature 2 - Offers Just for You (Image Right) */}
-          <div className="flex gap-[64px] items-center justify-center">
-            {/* Content */}
-            <div className="flex-1 flex flex-col gap-[24px]">
-              {/* Icon */}
-              <div className="w-[64px] h-[64px] bg-[#006a4e] rounded-[16px] flex items-center justify-center">
-                <OffersIcon />
-              </div>
-
-              {/* Heading */}
-              <h3 className="font-bold text-[36px] leading-[40px] text-[#1e293b]">
-                Exclusive Offers
-              </h3>
-
-              {/* Description */}
-              <p className="font-normal text-[20px] leading-[32.5px] text-[#374151]">
-                Get personalized deals and rewards from your favorite local
-                shops. The more you shop, the better the offers—tailored to
-                what you love!
-              </p>
-
-              {/* List */}
-              <div className="flex flex-col gap-[16px]">
-                <div className="flex items-start">
-                  <div className="pt-[4px]">
-                    <CheckIcon />
-                  </div>
-                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
-                    Exclusive personalized discounts
-                  </span>
-                </div>
-                <div className="flex items-start">
-                  <div className="pt-[4px]">
-                    <CheckIcon />
-                  </div>
-                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
-                    Loyalty rewards that grow with you
-                  </span>
-                </div>
-                <div className="flex items-start">
-                  <div className="pt-[4px]">
-                    <CheckIcon />
-                  </div>
-                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
-                    Flash deals from favorite stores
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Image */}
-            <div className="flex-1 h-[500px] rounded-[24px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/offers.jpg"
-                  alt="Mobile phone screen displaying personalized shopping offers and deals"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Feature 3 - Discover Local Gems (Image Left) */}
-          <div className="flex gap-[64px] items-center justify-center">
-            {/* Image */}
-            <div className="flex-1 h-[500px] rounded-[24px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/discover-gems.jpg"
-                  alt="Overhead view of a neighborhood map with colorful pins marking local shops"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="flex-1 flex flex-col gap-[24px]">
-              {/* Icon */}
-              <div className="w-[64px] h-[64px] bg-[#006a4e] rounded-[16px] flex items-center justify-center">
-                <MapIcon />
-              </div>
-
-              {/* Heading */}
-              <h3 className="font-bold text-[36px] leading-[40px] text-[#1e293b]">
-                Discover Local Gems
-              </h3>
-
-              {/* Description */}
-              <p className="font-normal text-[20px] leading-[32.5px] text-[#374151]">
-                Find hidden treasures in your neighborhood with real insights
-                from your community. Explore new shops, read authentic
-                reviews, and support local businesses you&apos;ll love.
-              </p>
-
-              {/* List */}
-              <div className="flex flex-col gap-[16px]">
-                <div className="flex items-start">
-                  <div className="pt-[4px]">
-                    <CheckIcon />
-                  </div>
-                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
-                    Discover hidden neighborhood shops
-                  </span>
-                </div>
-                <div className="flex items-start">
-                  <div className="pt-[4px]">
-                    <CheckIcon />
-                  </div>
-                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
-                    Read authentic community reviews
-                  </span>
-                </div>
-                <div className="flex items-start">
-                  <div className="pt-[4px]">
-                    <CheckIcon />
-                  </div>
-                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
-                    Support local businesses easily
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Feature 4 - Earn Rewards Every Time (Image Right) */}
-          <div className="flex gap-[64px] items-center justify-center">
-            {/* Content */}
-            <div className="flex-1 flex flex-col gap-[24px]">
-              {/* Icon */}
-              <div className="w-[64px] h-[64px] bg-[#006a4e] rounded-[16px] flex items-center justify-center">
-                <RewardsIcon />
-              </div>
-
-              {/* Heading */}
-              <h3 className="font-bold text-[36px] leading-[40px] text-[#1e293b]">
-                Earn Rewards
-              </h3>
-
-              {/* Description */}
-              <p className="font-normal text-[20px] leading-[32.5px] text-[#374151]">
-                Collect cashback and loyalty rewards with every purchase.
-                Track your earnings, redeem them at participating stores, and
-                make every shopping trip more rewarding.
-              </p>
-
-              {/* List */}
-              <div className="flex flex-col gap-[16px]">
-                <div className="flex items-start">
-                  <div className="pt-[4px]">
-                    <CheckIcon />
-                  </div>
-                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
-                    Cashback on every purchase
-                  </span>
-                </div>
-                <div className="flex items-start">
-                  <div className="pt-[4px]">
-                    <CheckIcon />
-                  </div>
-                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
-                    Track all your rewards in one place
-                  </span>
-                </div>
-                <div className="flex items-start">
-                  <div className="pt-[4px]">
-                    <CheckIcon />
-                  </div>
-                  <span className="ml-[12px] font-normal text-[18px] leading-[28px] text-[#374151]">
-                    Redeem at participating stores
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Image */}
-            <div className="flex-1 h-[500px] rounded-[24px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/earn-rewards.jpg"
-                  alt="Digital wallet interface showing cashback rewards and points accumulation"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
+          {/* Feature 4 - Earn Rewards */}
+          <FeatureCard
+            icon={<RewardsIcon />}
+            title="Earn Rewards"
+            description="Collect cashback and loyalty rewards with every purchase. Track your earnings, redeem them at participating stores, and make every shopping trip more rewarding."
+            checkItems={[
+              "Cashback on every purchase",
+              "Track all your rewards in one place",
+              "Redeem at participating stores",
+            ]}
+            imageSrc="/images/earn-rewards.jpg"
+            imageAlt="Digital wallet interface showing cashback rewards and points accumulation"
+            imageFirst={false}
+          />
 
           {/* Sustainability Banner */}
           <div
-            className="relative rounded-[24px] overflow-hidden px-[168px] py-[64px]"
+            className="relative rounded-2xl lg:rounded-3xl overflow-hidden px-6 sm:px-8 md:px-12 lg:px-20 xl:px-40 py-10 md:py-12 lg:py-16"
             style={{
               background: "linear-gradient(to right, #006a4e, #1e293b)",
             }}
           >
             {/* Top-right decoration */}
-            <div className="absolute -top-[128px] -right-[128px] w-[256px] h-[256px] rounded-full bg-[rgba(144,238,144,0.2)]" />
+            <div className="absolute -top-16 md:-top-32 -right-16 md:-right-32 w-32 md:w-64 h-32 md:h-64 rounded-full bg-[rgba(144,238,144,0.2)]" />
             {/* Bottom-left decoration */}
-            <div className="absolute -bottom-[96px] -left-[96px] w-[192px] h-[192px] rounded-full bg-[rgba(144,238,144,0.2)]" />
+            <div className="absolute -bottom-12 md:-bottom-24 -left-12 md:-left-24 w-24 md:w-48 h-24 md:h-48 rounded-full bg-[rgba(144,238,144,0.2)]" />
 
             {/* Content */}
-            <div className="relative flex flex-col gap-[24px] items-center max-w-[896px] mx-auto">
+            <div className="relative flex flex-col gap-4 md:gap-6 items-center max-w-[896px] mx-auto">
               {/* Icon */}
-              <div className="w-[64px] h-[64px] bg-[#90ee90] rounded-[16px] flex items-center justify-center">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-[#90ee90] rounded-xl md:rounded-2xl flex items-center justify-center">
                 <LeafIcon />
               </div>
 
               {/* Heading */}
-              <h3 className="font-bold text-[36px] leading-[40px] text-white text-center">
+              <h3 className="font-bold text-2xl md:text-3xl lg:text-4xl leading-tight text-white text-center">
                 Shop Sustainably
               </h3>
 
               {/* Description */}
-              <p className="font-normal text-[20px] leading-[32.5px] text-[#e5e7eb] text-center">
-                Make eco-friendly choices with digital receipts and sustainability tracking. See the positive
-                impact of supporting local businesses and help reduce waste in your community.
+              <p className="font-normal text-base md:text-lg lg:text-xl leading-relaxed text-[#e5e7eb] text-center">
+                Make eco-friendly choices with digital receipts and
+                sustainability tracking. See the positive impact of supporting
+                local businesses and help reduce waste in your community.
               </p>
 
               {/* Stats */}
-              <div className="flex gap-[32px] items-start justify-center pt-[8px]">
-                <div className="flex flex-col gap-[8px] items-center w-[234.66px]">
-                  <span className="font-bold text-[48px] leading-[48px] text-[#90ee90] text-center">
+              <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-12 items-center justify-center pt-4 md:pt-6 w-full">
+                <div className="flex flex-col gap-2 items-center">
+                  <span className="font-bold text-3xl md:text-4xl lg:text-5xl leading-tight text-[#90ee90] text-center">
                     100%
                   </span>
-                  <span className="font-normal text-[16px] leading-[24px] text-[#d1d5db] text-center">
+                  <span className="font-normal text-sm md:text-base leading-6 text-[#d1d5db] text-center">
                     Digital Receipts
                   </span>
                 </div>
-                <div className="flex flex-col gap-[8px] items-center w-[234.67px]">
-                  <span className="font-bold text-[48px] leading-[48px] text-[#90ee90] text-center">
+                <div className="flex flex-col gap-2 items-center">
+                  <span className="font-bold text-3xl md:text-4xl lg:text-5xl leading-tight text-[#90ee90] text-center">
                     85%
                   </span>
-                  <span className="font-normal text-[16px] leading-[24px] text-[#d1d5db] text-center">
+                  <span className="font-normal text-sm md:text-base leading-6 text-[#d1d5db] text-center">
                     Waste Reduction
                   </span>
                 </div>
-                <div className="flex flex-col gap-[8px] items-center w-[234.67px]">
-                  <span className="font-bold text-[48px] leading-[48px] text-[#90ee90] text-center">
+                <div className="flex flex-col gap-2 items-center">
+                  <span className="font-bold text-3xl md:text-4xl lg:text-5xl leading-tight text-[#90ee90] text-center">
                     Local
                   </span>
-                  <span className="font-normal text-[16px] leading-[24px] text-[#d1d5db] text-center">
+                  <span className="font-normal text-sm md:text-base leading-6 text-[#d1d5db] text-center">
                     Community Impact
                   </span>
                 </div>
@@ -397,34 +278,30 @@ export default function WhyAulaxSection() {
         </div>
 
         {/* Download CTA Section */}
-        <div className="flex flex-col gap-[24px] items-start pt-[16px] mt-[64px]">
+        <div className="flex flex-col gap-6 items-center pt-4 mt-12 md:mt-16">
           {/* Heading */}
-          <div className="w-full flex justify-center">
-            <h3 className="font-bold text-[30px] leading-[36px] text-[#1e293b] text-center">
-              Ready to experience the future of local shopping?
-            </h3>
-          </div>
+          <h3 className="font-bold text-xl md:text-2xl lg:text-3xl leading-tight text-[#1e293b] text-center px-4">
+            Ready to experience the future of local shopping?
+          </h3>
 
           {/* Buttons */}
-          <div className="w-full flex items-center justify-center">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
             <Link
               href="#download"
-              className="bg-[#90ee90] px-[32px] py-[16px] rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-[#7de87d] transition-colors"
+              className="bg-[#90ee90] px-6 md:px-8 py-3 md:py-4 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-[#7de87d] transition-colors min-h-[44px] flex items-center justify-center"
             >
-              <span className="font-bold text-[18px] leading-[28px] text-[#1e293b] text-center">
+              <span className="font-bold text-base md:text-lg leading-7 text-[#1e293b] text-center whitespace-nowrap">
                 Download Aulax Now
               </span>
             </Link>
-            <div className="ml-[16px]">
-              <Link
-                href="#learn-more"
-                className="border-2 border-[#1e293b] px-[34px] py-[18px] rounded-full hover:bg-[#f1f5f9] transition-colors"
-              >
-                <span className="font-bold text-[18px] leading-[28px] text-[#1e293b] text-center">
-                  Learn More
-                </span>
-              </Link>
-            </div>
+            <Link
+              href="#learn-more"
+              className="border-2 border-[#1e293b] px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-[#f1f5f9] transition-colors min-h-[44px] flex items-center justify-center"
+            >
+              <span className="font-bold text-base md:text-lg leading-7 text-[#1e293b] text-center">
+                Learn More
+              </span>
+            </Link>
           </div>
         </div>
       </div>

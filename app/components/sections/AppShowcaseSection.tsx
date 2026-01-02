@@ -24,14 +24,14 @@ const CommunityIcon = () => (
 
 export default function AppShowcaseSection() {
   return (
-    <section className="bg-white px-0 py-[96px]">
-      <div className="max-w-[1280px] mx-auto px-[24px]">
+    <section className="bg-white px-4 sm:px-6 md:px-8 lg:px-0 py-12 md:py-16 lg:py-24">
+      <div className="max-w-[1280px] mx-auto px-0 lg:px-6">
         {/* Main Content - Two feature blocks */}
-        <div className="flex flex-col gap-[80px]">
+        <div className="flex flex-col gap-12 md:gap-16 lg:gap-20">
           {/* Feature 1 - Single hub */}
-          <div className="flex gap-[48px] items-center justify-center">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 items-center justify-center px-4 lg:px-0">
             {/* Left - Image */}
-            <div className="flex-1 h-[384px] rounded-[16px] overflow-hidden relative">
+            <div className="flex-1 w-full aspect-[16/10] lg:h-[384px] lg:aspect-auto rounded-2xl overflow-hidden relative">
               <Image
                 src="/images/a-single-hub-for-all-your-local-shopping.png"
                 alt="A single hub for all your local shopping"
@@ -41,28 +41,28 @@ export default function AppShowcaseSection() {
             </div>
 
             {/* Right - Content */}
-            <div className="flex-1 flex flex-col gap-[16px]">
-              <h3 className="font-bold text-[30px] leading-[36px] text-[#1e293b]">
+            <div className="flex-1 flex flex-col gap-4">
+              <h3 className="font-bold text-2xl md:text-3xl leading-tight text-[#1e293b]">
                 A single hub for all your local shopping
               </h3>
 
-              <p className="font-normal text-[18px] leading-[28px] text-[#4b5563]">
+              <p className="font-normal text-base md:text-lg leading-relaxed text-[#4b5563]">
                 Connect with your favorite local stores, manage orders, and
                 discover new products seamlessly. Aulax brings the entire
                 marketplace to your fingertips, making every shopping trip
                 simple and enjoyable.
               </p>
 
-              <div className="flex items-center gap-[20.5px] pt-[16px]">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5 pt-2 md:pt-4">
                 <Link
                   href="#"
-                  className="inline-block bg-[#90ee90] text-[#1e293b] font-bold text-[16px] leading-[24px] px-[24px] py-[10px] rounded-full hover:bg-[#7de47d] transition-colors"
+                  className="inline-block bg-[#90ee90] text-[#1e293b] font-bold text-base leading-6 px-5 md:px-6 py-2.5 rounded-full hover:bg-[#7de47d] transition-colors min-h-[44px] flex items-center justify-center"
                 >
                   Open an account
                 </Link>
                 <Link
                   href="#"
-                  className="inline-block font-bold text-[16px] leading-[24px] text-[#1e293b] hover:underline"
+                  className="inline-block font-bold text-base leading-6 text-[#1e293b] hover:underline min-h-[44px] flex items-center"
                 >
                   Explore features
                 </Link>
@@ -71,23 +71,23 @@ export default function AppShowcaseSection() {
           </div>
 
           {/* Feature 2 - Recommendations */}
-          <div className="relative h-[384px]">
+          <div className="flex flex-col-reverse lg:flex-row gap-6 md:gap-8 lg:gap-12 items-center justify-center px-4 lg:px-0">
             {/* Left - Content */}
-            <div className="absolute left-0 top-[96px] w-[calc(50%-24px)] flex flex-col gap-[16px]">
-              <h3 className="font-bold text-[30px] leading-[36px] text-[#1e293b]">
+            <div className="flex-1 flex flex-col gap-4">
+              <h3 className="font-bold text-2xl md:text-3xl leading-tight text-[#1e293b]">
                 Get recommendations tailored for you
               </h3>
 
-              <p className="font-normal text-[18px] leading-[28px] text-[#4b5563]">
+              <p className="font-normal text-base md:text-lg leading-relaxed text-[#4b5563]">
                 Our smart engine learns your preferences to suggest products and
                 businesses you&apos;ll love. Enjoy a truly personalized
                 experience that helps you find hidden gems in your community.
               </p>
 
-              <div className="pt-[6px]">
+              <div className="pt-2">
                 <Link
                   href="#"
-                  className="inline-block bg-[#90ee90] text-[#1e293b] font-bold text-[16px] leading-[24px] px-[24px] py-[10px] rounded-full hover:bg-[#7de47d] transition-colors"
+                  className="inline-block bg-[#90ee90] text-[#1e293b] font-bold text-base leading-6 px-5 md:px-6 py-2.5 rounded-full hover:bg-[#7de47d] transition-colors min-h-[44px] flex items-center justify-center"
                 >
                   Discover your feed
                 </Link>
@@ -95,7 +95,7 @@ export default function AppShowcaseSection() {
             </div>
 
             {/* Right - Image */}
-            <div className="absolute right-0 top-0 w-[calc(50%-24px)] h-[384px] rounded-[16px] overflow-hidden">
+            <div className="flex-1 w-full aspect-[16/10] lg:h-[384px] lg:aspect-auto rounded-2xl overflow-hidden relative">
               <Image
                 src="/images/get-recommendations-tailored-for-you.png"
                 alt="Get recommendations tailored for you"
@@ -107,42 +107,42 @@ export default function AppShowcaseSection() {
         </div>
 
         {/* Trust Badges */}
-        <div className="flex gap-[32px] items-start justify-center mt-[80px]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 items-start justify-center mt-12 md:mt-16 lg:mt-20 px-4 lg:px-0">
           {/* Verified Local Businesses */}
-          <div className="flex-1 flex flex-col items-center">
-            <div className="w-[48px] h-[48px] rounded-full bg-[#006a4e] flex items-center justify-center">
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 rounded-full bg-[#006a4e] flex items-center justify-center">
               <VerifiedIcon />
             </div>
-            <h4 className="font-bold text-[16px] leading-[24px] text-[#1e293b] text-center mt-[16px]">
+            <h4 className="font-bold text-base leading-6 text-[#1e293b] text-center mt-4">
               Verified Local Businesses
             </h4>
-            <p className="font-normal text-[16px] leading-[24px] text-[#4b5563] text-center mt-[4px]">
+            <p className="font-normal text-sm md:text-base leading-6 text-[#4b5563] text-center mt-1">
               We partner with trusted local sellers.
             </p>
           </div>
 
           {/* Secure Payment Network */}
-          <div className="flex-1 flex flex-col items-center">
-            <div className="w-[48px] h-[48px] rounded-full bg-[#006a4e] flex items-center justify-center">
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 rounded-full bg-[#006a4e] flex items-center justify-center">
               <SecureIcon />
             </div>
-            <h4 className="font-bold text-[16px] leading-[24px] text-[#1e293b] text-center mt-[16px]">
+            <h4 className="font-bold text-base leading-6 text-[#1e293b] text-center mt-4">
               Secure Payment Network
             </h4>
-            <p className="font-normal text-[16px] leading-[24px] text-[#4b5563] text-center mt-[4px]">
+            <p className="font-normal text-sm md:text-base leading-6 text-[#4b5563] text-center mt-1">
               Your transactions are encrypted and safe.
             </p>
           </div>
 
           {/* Community Rated */}
-          <div className="flex-1 flex flex-col items-center">
-            <div className="w-[48px] h-[48px] rounded-full bg-[#006a4e] flex items-center justify-center">
+          <div className="flex flex-col items-center">
+            <div className="w-12 h-12 rounded-full bg-[#006a4e] flex items-center justify-center">
               <CommunityIcon />
             </div>
-            <h4 className="font-bold text-[16px] leading-[24px] text-[#1e293b] text-center mt-[16px]">
+            <h4 className="font-bold text-base leading-6 text-[#1e293b] text-center mt-4">
               Community Rated
             </h4>
-            <p className="font-normal text-[16px] leading-[24px] text-[#4b5563] text-center mt-[4px]">
+            <p className="font-normal text-sm md:text-base leading-6 text-[#4b5563] text-center mt-1">
               Read reviews from shoppers like you.
             </p>
           </div>

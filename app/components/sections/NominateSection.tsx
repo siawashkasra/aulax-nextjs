@@ -58,35 +58,36 @@ const SuccessIcon = () => (
 export default function NominateSection() {
   return (
     <section
-      className="w-full px-[80px] py-[96px]"
+      className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-12 md:py-16 lg:py-24"
       style={{
         background:
           "linear-gradient(135deg, rgba(161, 255, 194, 0.3) 0%, rgba(207, 250, 254, 0.4) 100%)",
       }}
     >
-      <div className="max-w-[1280px] mx-auto px-[24px]">
-        <div className="flex items-center justify-center gap-[48px]">
+      <div className="max-w-[1280px] mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-12">
           {/* Left Content */}
-          <div className="flex-1 flex flex-col items-start gap-[24px]">
+          <div className="flex-1 flex flex-col items-start gap-4 md:gap-6 w-full lg:w-auto">
             {/* Badge */}
-            <div className="bg-[rgba(144,238,144,0.4)] px-[16px] py-[8px] rounded-full">
-              <span className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+            <div className="bg-[rgba(144,238,144,0.4)] px-4 py-2 rounded-full">
+              <span className="font-semibold text-sm leading-5 text-[#1e293b]">
                 Help Us Grow
               </span>
             </div>
 
             {/* Heading */}
             <div className="w-full">
-              <h2 className="font-bold text-[48px] leading-[48px] text-[#1e293b]">
+              <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-[#1e293b]">
                 Know a Great Local
-                <br />
+                <br className="hidden sm:block" />
+                <span className="sm:hidden"> </span>
                 Business?
               </h2>
             </div>
 
             {/* Description */}
             <div className="w-full">
-              <p className="text-[18px] leading-[29.25px] text-[#374151] max-w-[458px]">
+              <p className="text-base md:text-lg leading-relaxed text-[#374151] max-w-[458px]">
                 Help us bring your favorite local shops onto Aulax! Nominate
                 businesses you love and want to see on our platform. Together,
                 we can build a stronger local marketplace.
@@ -94,17 +95,17 @@ export default function NominateSection() {
             </div>
 
             {/* Feature Items */}
-            <div className="w-full flex flex-col gap-[16px] pt-[8px]">
+            <div className="w-full flex flex-col gap-4 pt-2">
               {/* Feature 1 - Quick & Easy Process */}
               <div className="flex items-start">
-                <div className="w-[40px] h-[44px] flex-shrink-0">
+                <div className="w-10 h-11 flex-shrink-0">
                   <ClipboardIcon />
                 </div>
-                <div className="flex flex-col gap-[4px] pl-[16px]">
-                  <h4 className="font-bold text-[16px] leading-[24px] text-[#1e293b]">
+                <div className="flex flex-col gap-1 pl-4">
+                  <h4 className="font-bold text-base leading-6 text-[#1e293b]">
                     Quick &amp; Easy Process
                   </h4>
-                  <p className="text-[16px] leading-[24px] text-[#4b5563]">
+                  <p className="text-sm md:text-base leading-6 text-[#4b5563]">
                     Just share the business name and location
                   </p>
                 </div>
@@ -112,14 +113,14 @@ export default function NominateSection() {
 
               {/* Feature 2 - We Handle the Rest */}
               <div className="flex items-start">
-                <div className="w-[40px] h-[44px] flex-shrink-0">
+                <div className="w-10 h-11 flex-shrink-0">
                   <HandshakeIcon />
                 </div>
-                <div className="flex flex-col gap-[4px] pl-[16px]">
-                  <h4 className="font-bold text-[16px] leading-[24px] text-[#1e293b]">
+                <div className="flex flex-col gap-1 pl-4">
+                  <h4 className="font-bold text-base leading-6 text-[#1e293b]">
                     We Handle the Rest
                   </h4>
-                  <p className="text-[16px] leading-[24px] text-[#4b5563]">
+                  <p className="text-sm md:text-base leading-6 text-[#4b5563]">
                     Our team reaches out and onboards them
                   </p>
                 </div>
@@ -127,14 +128,14 @@ export default function NominateSection() {
 
               {/* Feature 3 - Get Rewarded */}
               <div className="flex items-start">
-                <div className="w-[40px] h-[44px] flex-shrink-0">
+                <div className="w-10 h-11 flex-shrink-0">
                   <RewardIcon />
                 </div>
-                <div className="flex flex-col gap-[4px] pl-[16px]">
-                  <h4 className="font-bold text-[16px] leading-[24px] text-[#1e293b]">
+                <div className="flex flex-col gap-1 pl-4">
+                  <h4 className="font-bold text-base leading-6 text-[#1e293b]">
                     Get Rewarded
                   </h4>
-                  <p className="text-[16px] leading-[24px] text-[#4b5563]">
+                  <p className="text-sm md:text-base leading-6 text-[#4b5563]">
                     Earn bonus rewards when they join
                   </p>
                 </div>
@@ -142,10 +143,10 @@ export default function NominateSection() {
             </div>
 
             {/* CTA Button */}
-            <div className="pt-[16px]">
+            <div className="pt-4">
               <Link
                 href="#nominate-form"
-                className="inline-flex items-center bg-[#1e293b] text-white font-bold text-[18px] leading-[28px] px-[32px] py-[16px] rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-[#334155] transition-colors"
+                className="inline-flex items-center bg-[#1e293b] text-white font-bold text-base md:text-lg leading-7 px-6 md:px-8 py-3 md:py-4 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-[#334155] transition-colors min-h-[44px]"
               >
                 Nominate a Business
               </Link>
@@ -153,9 +154,9 @@ export default function NominateSection() {
           </div>
 
           {/* Right Side - White Card with Image and Stats */}
-          <div className="flex-[0.87] bg-white rounded-[24px] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] overflow-hidden p-[32px] flex flex-col gap-[24px]">
+          <div className="w-full lg:flex-1 lg:max-w-[500px] bg-white rounded-2xl lg:rounded-3xl shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] overflow-hidden p-4 sm:p-6 md:p-8 flex flex-col gap-4 md:gap-6">
             {/* Image Container */}
-            <div className="w-full h-[256px] rounded-[16px] overflow-hidden bg-gray-100 relative">
+            <div className="w-full aspect-[16/10] sm:aspect-[16/9] md:h-[256px] md:aspect-auto rounded-xl md:rounded-2xl overflow-hidden bg-gray-100 relative">
               <Image
                 src="/images/nominate-business.jpg"
                 alt="Friendly local business owner"
@@ -165,42 +166,42 @@ export default function NominateSection() {
             </div>
 
             {/* Stats Cards */}
-            <div className="flex flex-col gap-[16px]">
+            <div className="flex flex-col gap-3 md:gap-4">
               {/* Stat 1 - Local Shops */}
-              <div className="w-full bg-[#f9fafb] rounded-[12px] p-[16px] flex items-center justify-between">
+              <div className="w-full bg-[#f9fafb] rounded-xl p-3 md:p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div className="flex items-center">
                   <ShopIcon />
-                  <span className="font-semibold text-[16px] leading-[24px] text-[#1e293b] pl-[12px]">
+                  <span className="font-semibold text-sm md:text-base leading-6 text-[#1e293b] pl-3">
                     Local Shops
                   </span>
                 </div>
-                <span className="text-[14px] leading-[20px] text-[#4b5563]">
+                <span className="text-sm leading-5 text-[#4b5563]">
                   500+ Onboarded
                 </span>
               </div>
 
               {/* Stat 2 - Community Nominations */}
-              <div className="w-full bg-[#f9fafb] rounded-[12px] p-[16px] flex items-center justify-between">
+              <div className="w-full bg-[#f9fafb] rounded-xl p-3 md:p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div className="flex items-center">
                   <CommunityIcon />
-                  <span className="font-semibold text-[16px] leading-[24px] text-[#1e293b] pl-[12px]">
+                  <span className="font-semibold text-sm md:text-base leading-6 text-[#1e293b] pl-3">
                     Community Nominations
                   </span>
                 </div>
-                <span className="text-[14px] leading-[20px] text-[#4b5563]">
+                <span className="text-sm leading-5 text-[#4b5563]">
                   1,200+ Received
                 </span>
               </div>
 
               {/* Stat 3 - Success Rate */}
-              <div className="w-full bg-[#f9fafb] rounded-[12px] p-[16px] flex items-center justify-between">
+              <div className="w-full bg-[#f9fafb] rounded-xl p-3 md:p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div className="flex items-center">
                   <SuccessIcon />
-                  <span className="font-semibold text-[16px] leading-[24px] text-[#1e293b] pl-[12px]">
+                  <span className="font-semibold text-sm md:text-base leading-6 text-[#1e293b] pl-3">
                     Success Rate
                   </span>
                 </div>
-                <span className="text-[14px] leading-[20px] text-[#4b5563]">
+                <span className="text-sm leading-5 text-[#4b5563]">
                   92% Join
                 </span>
               </div>

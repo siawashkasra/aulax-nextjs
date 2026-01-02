@@ -38,17 +38,62 @@
   --shadow-sm: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
 
-  /* Spacing */
-  --px-container: 80px;
-  --px-inner: 24px;
-  --py-section: 96px;
-  --gap-xl: 128px;
-  --gap-lg: 64px;
-  --gap-md: 48px;
-  --gap-sm: 32px;
-  --gap-xs: 24px;
-  --gap-xxs: 16px;
-  --gap-tiny: 8px;
+  /* Responsive Spacing - Mobile first */
+  --px-container: 16px;
+  --px-inner: 16px;
+  --py-section: 48px;
+  --gap-xl: 64px;
+  --gap-lg: 32px;
+  --gap-md: 24px;
+  --gap-sm: 16px;
+  --gap-xs: 12px;
+  --gap-xxs: 8px;
+  --gap-tiny: 4px;
+}
+
+/* Tablet breakpoint (768px+) */
+@media (min-width: 768px) {
+  :root {
+    --px-container: 32px;
+    --px-inner: 24px;
+    --py-section: 64px;
+    --gap-xl: 80px;
+    --gap-lg: 48px;
+    --gap-md: 32px;
+    --gap-sm: 24px;
+    --gap-xs: 16px;
+    --gap-xxs: 12px;
+  }
+}
+
+/* Desktop breakpoint (1024px+) */
+@media (min-width: 1024px) {
+  :root {
+    --px-container: 64px;
+    --py-section: 80px;
+    --gap-xl: 96px;
+    --gap-lg: 64px;
+    --gap-md: 48px;
+    --gap-sm: 32px;
+    --gap-xs: 24px;
+    --gap-xxs: 16px;
+  }
+}
+
+/* Large desktop breakpoint (1280px+) */
+@media (min-width: 1280px) {
+  :root {
+    --px-container: 80px;
+    --py-section: 96px;
+    --gap-xl: 128px;
+  }
+}
+
+/* Extra large desktop (1440px+) */
+@media (min-width: 1440px) {
+  :root {
+    --px-container: 104px;
+  }
 }
 
 @theme inline {
@@ -77,6 +122,7 @@ body {
   background: var(--color-bg-white);
   color: var(--color-text-body);
   font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
 /* Reset link styles */
@@ -102,4 +148,57 @@ button {
   border: none;
   background: none;
   font-family: inherit;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent horizontal overflow */
+* {
+  box-sizing: border-box;
+}
+
+/* Utility classes for responsive containers */
+.container-responsive {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--px-container);
+  padding-right: var(--px-container);
+}
+
+.section-padding {
+  padding-top: var(--py-section);
+  padding-bottom: var(--py-section);
+}
+
+/* Responsive typography using clamp() */
+.text-hero {
+  font-size: clamp(2rem, 5vw + 1rem, 3.75rem);
+  line-height: 1;
+}
+
+.text-section-heading {
+  font-size: clamp(1.75rem, 3vw + 0.5rem, 3rem);
+  line-height: 1.1;
+}
+
+.text-card-heading {
+  font-size: clamp(1.25rem, 2vw + 0.25rem, 1.875rem);
+  line-height: 1.2;
+}
+
+.text-body-lg {
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.125rem);
+  line-height: 1.6;
+}
+
+/* Minimum tap target size for accessibility */
+.tap-target {
+  min-height: 44px;
+  min-width: 44px;
 }

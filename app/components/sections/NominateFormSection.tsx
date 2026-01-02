@@ -85,20 +85,20 @@ export default function NominateFormSection() {
   };
 
   return (
-    <section className="w-full bg-white px-[80px] py-[96px]">
-      <div className="max-w-[896px] mx-auto flex flex-col gap-[48px]">
+    <section className="w-full bg-white px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-12 md:py-16 lg:py-24">
+      <div className="max-w-[896px] mx-auto flex flex-col gap-8 md:gap-12">
         {/* Content Container */}
-        <div className="flex flex-col items-center gap-[24px]">
+        <div className="flex flex-col items-center gap-6">
           {/* Header */}
           <div className="w-full text-center">
-            <h2 className="font-bold text-[48px] leading-[48px] text-[#1e293b]">
+            <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-[#1e293b]">
               Help Us Write the Next Chapter
             </h2>
           </div>
 
           {/* Subtext */}
-          <div className="max-w-[672px] text-center">
-            <p className="text-[18px] leading-[28px] text-[#374151]">
+          <div className="max-w-[672px] text-center px-4">
+            <p className="text-base md:text-lg leading-7 text-[#374151]">
               You know your neighborhood best. Nominate a local shop you love
               and help them shine in our marketplace.
             </p>
@@ -106,7 +106,7 @@ export default function NominateFormSection() {
 
           {/* Form Card */}
           <div
-            className="w-full rounded-[24px] shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] overflow-hidden p-[48px] pb-[64px]"
+            className="w-full rounded-2xl lg:rounded-3xl shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] overflow-hidden p-4 sm:p-6 md:p-8 lg:p-12"
             style={{
               background:
                 "linear-gradient(135deg, rgba(161, 255, 194, 0.2) 0%, rgba(207, 250, 254, 0.3) 100%)",
@@ -114,11 +114,11 @@ export default function NominateFormSection() {
           >
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-[24px]"
+              className="flex flex-col gap-5 md:gap-6"
             >
               {/* Shop Name */}
-              <div className="flex flex-col gap-[8px]">
-                <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+              <div className="flex flex-col gap-2">
+                <label className="font-semibold text-sm leading-5 text-[#1e293b]">
                   Shop Name *
                 </label>
                 <input
@@ -128,16 +128,16 @@ export default function NominateFormSection() {
                   onChange={handleChange}
                   placeholder="Enter business name"
                   required
-                  className="w-full px-[16px] py-[14px] bg-white border-2 border-[#e5e7eb] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
+                  className="w-full px-4 py-3 md:py-3.5 bg-white border-2 border-[#e5e7eb] rounded-xl text-base text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent min-h-[44px]"
                 />
-                <span className="text-[12px] leading-[16px] text-[#6b7280]">
+                <span className="text-xs leading-4 text-[#6b7280]">
                   Start typing to search from Google Maps
                 </span>
               </div>
 
               {/* Location/Address */}
-              <div className="flex flex-col gap-[8px]">
-                <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+              <div className="flex flex-col gap-2">
+                <label className="font-semibold text-sm leading-5 text-[#1e293b]">
                   Location/Address *
                 </label>
                 <input
@@ -147,13 +147,13 @@ export default function NominateFormSection() {
                   onChange={handleChange}
                   placeholder="123 Main Street, Toronto, ON"
                   required
-                  className="w-full px-[16px] py-[14px] bg-white border-2 border-[#e5e7eb] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
+                  className="w-full px-4 py-3 md:py-3.5 bg-white border-2 border-[#e5e7eb] rounded-xl text-base text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent min-h-[44px]"
                 />
               </div>
 
               {/* Business Contact */}
-              <div className="flex flex-col gap-[8px]">
-                <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+              <div className="flex flex-col gap-2">
+                <label className="font-semibold text-sm leading-5 text-[#1e293b]">
                   Business Contact *
                 </label>
                 <input
@@ -163,13 +163,13 @@ export default function NominateFormSection() {
                   onChange={handleChange}
                   placeholder="Phone number or email"
                   required
-                  className="w-full px-[16px] py-[14px] bg-white border-2 border-[#e5e7eb] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
+                  className="w-full px-4 py-3 md:py-3.5 bg-white border-2 border-[#e5e7eb] rounded-xl text-base text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent min-h-[44px]"
                 />
               </div>
 
               {/* Why they deserve recognition */}
-              <div className="flex flex-col gap-[8px]">
-                <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+              <div className="flex flex-col gap-2">
+                <label className="font-semibold text-sm leading-5 text-[#1e293b]">
                   Why they deserve recognition (optional)
                 </label>
                 <textarea
@@ -178,14 +178,14 @@ export default function NominateFormSection() {
                   onChange={handleChange}
                   placeholder="Tell us what makes this business special..."
                   rows={4}
-                  className="w-full px-[16px] py-[12px] bg-white border-2 border-[#e5e7eb] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 bg-white border-2 border-[#e5e7eb] rounded-xl text-base text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent resize-none"
                 />
               </div>
 
-              {/* Your Name & Your Contact - Two columns */}
-              <div className="flex gap-[24px] pb-[16px]">
-                <div className="flex-1 flex flex-col gap-[8px]">
-                  <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+              {/* Your Name & Your Contact - Stack on mobile, side by side on larger screens */}
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pb-2 md:pb-4">
+                <div className="flex-1 flex flex-col gap-2">
+                  <label className="font-semibold text-sm leading-5 text-[#1e293b]">
                     Your Name *
                   </label>
                   <input
@@ -195,11 +195,11 @@ export default function NominateFormSection() {
                     onChange={handleChange}
                     placeholder="Your full name"
                     required
-                    className="w-full px-[16px] py-[14px] bg-white border-2 border-[#e5e7eb] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
+                    className="w-full px-4 py-3 md:py-3.5 bg-white border-2 border-[#e5e7eb] rounded-xl text-base text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent min-h-[44px]"
                   />
                 </div>
-                <div className="flex-1 flex flex-col gap-[8px]">
-                  <label className="font-semibold text-[14px] leading-[20px] text-[#1e293b]">
+                <div className="flex-1 flex flex-col gap-2">
+                  <label className="font-semibold text-sm leading-5 text-[#1e293b]">
                     Your Contact *
                   </label>
                   <input
@@ -209,7 +209,7 @@ export default function NominateFormSection() {
                     onChange={handleChange}
                     placeholder="Phone or email"
                     required
-                    className="w-full px-[16px] py-[14px] bg-white border-2 border-[#e5e7eb] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent"
+                    className="w-full px-4 py-3 md:py-3.5 bg-white border-2 border-[#e5e7eb] rounded-xl text-base text-[#1f2937] placeholder-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-[#006a4e] focus:border-transparent min-h-[44px]"
                   />
                 </div>
               </div>
@@ -217,7 +217,7 @@ export default function NominateFormSection() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#1e293b] text-white font-bold text-[18px] leading-[28px] px-[32px] py-[16px] rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-[#334155] transition-colors flex items-center justify-center gap-[8px]"
+                className="w-full bg-[#1e293b] text-white font-bold text-base md:text-lg leading-7 px-6 md:px-8 py-3 md:py-4 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-[#334155] transition-colors flex items-center justify-center gap-2 min-h-[44px]"
               >
                 <ArrowIcon />
                 <span>Nominate a Local Hero</span>
@@ -225,7 +225,7 @@ export default function NominateFormSection() {
 
               {/* Terms */}
               <div className="text-center">
-                <p className="text-[12px] leading-[16px] text-[#4b5563]">
+                <p className="text-xs leading-4 text-[#4b5563]">
                   By submitting this form, you agree to our{" "}
                   <Link
                     href="#"
@@ -245,37 +245,37 @@ export default function NominateFormSection() {
             </form>
           </div>
 
-          {/* Feature Cards */}
-          <div className="w-full flex justify-center gap-[24px]">
+          {/* Feature Cards - Stack on mobile, row on larger screens */}
+          <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
             {/* Quick Response */}
-            <div className="flex-1 max-w-[282px] bg-[#f9fafb] rounded-[16px] p-[24px] flex flex-col items-center gap-[16px]">
+            <div className="bg-[#f9fafb] rounded-2xl p-4 md:p-6 flex flex-col items-center gap-3 md:gap-4">
               <ClockIcon />
-              <h4 className="font-bold text-[16px] leading-[24px] text-[#1e293b] text-center">
+              <h4 className="font-bold text-base leading-6 text-[#1e293b] text-center">
                 Quick Response
               </h4>
-              <p className="text-[14px] leading-[20px] text-[#4b5563] text-center">
+              <p className="text-sm leading-5 text-[#4b5563] text-center">
                 We reach out within 48 hours
               </p>
             </div>
 
             {/* Easy Onboarding */}
-            <div className="flex-1 max-w-[282px] bg-[#f9fafb] rounded-[16px] p-[24px] flex flex-col items-center gap-[16px]">
+            <div className="bg-[#f9fafb] rounded-2xl p-4 md:p-6 flex flex-col items-center gap-3 md:gap-4">
               <GearIcon />
-              <h4 className="font-bold text-[16px] leading-[24px] text-[#1e293b] text-center">
+              <h4 className="font-bold text-base leading-6 text-[#1e293b] text-center">
                 Easy Onboarding
               </h4>
-              <p className="text-[14px] leading-[20px] text-[#4b5563] text-center">
+              <p className="text-sm leading-5 text-[#4b5563] text-center">
                 We handle all the setup
               </p>
             </div>
 
             {/* Get Rewarded */}
-            <div className="flex-1 max-w-[282px] bg-[#f9fafb] rounded-[16px] p-[24px] flex flex-col items-center gap-[16px]">
+            <div className="bg-[#f9fafb] rounded-2xl p-4 md:p-6 flex flex-col items-center gap-3 md:gap-4">
               <GiftIcon />
-              <h4 className="font-bold text-[16px] leading-[24px] text-[#1e293b] text-center">
+              <h4 className="font-bold text-base leading-6 text-[#1e293b] text-center">
                 Get Rewarded
               </h4>
-              <p className="text-[14px] leading-[20px] text-[#4b5563] text-center">
+              <p className="text-sm leading-5 text-[#4b5563] text-center">
                 Earn bonus points when they join
               </p>
             </div>
@@ -285,6 +285,3 @@ export default function NominateFormSection() {
     </section>
   );
 }
-
-
-

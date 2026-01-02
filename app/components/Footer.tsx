@@ -53,20 +53,20 @@ const YouTubeIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f9fafb] pt-[64px] pb-[32px] px-[80px]">
-      <div className="max-w-[1280px] mx-auto px-[24px]">
-        {/* Footer Links */}
-        <div className="flex gap-[32px] items-start justify-center mb-[48px]">
+    <footer className="bg-[#f9fafb] pt-12 md:pt-16 pb-8 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20">
+      <div className="max-w-[1280px] mx-auto">
+        {/* Footer Links - Responsive Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-6 mb-12 md:mb-16">
           {/* Company */}
-          <div className="w-[220.8px] flex flex-col gap-[16px]">
-            <h4 className="font-semibold text-[16px] leading-[24px] text-[#1f2937]">
+          <div className="flex flex-col gap-4">
+            <h4 className="font-semibold text-base leading-6 text-[#1f2937]">
               Company
             </h4>
-            <ul className="flex flex-col gap-[8px]">
+            <ul className="flex flex-col gap-2">
               <li>
                 <Link
                   href="#"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   About us
                 </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Careers
                 </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Press
                 </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Blog
                 </Link>
@@ -99,15 +99,15 @@ export default function Footer() {
           </div>
 
           {/* Aulax Products */}
-          <div className="w-[220.8px] flex flex-col gap-[16px]">
-            <h4 className="font-semibold text-[16px] leading-[24px] text-[#1f2937]">
+          <div className="flex flex-col gap-4">
+            <h4 className="font-semibold text-base leading-6 text-[#1f2937]">
               Aulax Products
             </h4>
-            <ul className="flex flex-col gap-[8px]">
+            <ul className="flex flex-col gap-2">
               <li>
                 <Link
                   href="#"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Personal Account
                 </Link>
@@ -115,7 +115,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Business Account
                 </Link>
@@ -123,7 +123,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Aulax Platform
                 </Link>
@@ -131,7 +131,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Gift Cards
                 </Link>
@@ -140,15 +140,15 @@ export default function Footer() {
           </div>
 
           {/* Resources */}
-          <div className="w-[220.8px] flex flex-col gap-[16px]">
-            <h4 className="font-semibold text-[16px] leading-[24px] text-[#1f2937]">
+          <div className="flex flex-col gap-4">
+            <h4 className="font-semibold text-base leading-6 text-[#1f2937]">
               Resources
             </h4>
-            <ul className="flex flex-col gap-[8px]">
+            <ul className="flex flex-col gap-2">
               <li>
                 <Link
                   href="#"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Help Center
                 </Link>
@@ -156,7 +156,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Community
                 </Link>
@@ -164,7 +164,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Service Status
                 </Link>
@@ -172,7 +172,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   API Docs
                 </Link>
@@ -181,23 +181,23 @@ export default function Footer() {
           </div>
 
           {/* Contact Us */}
-          <div className="w-[220.8px] flex flex-col gap-[16px]">
-            <h4 className="font-semibold text-[16px] leading-[24px] text-[#1f2937]">
+          <div className="flex flex-col gap-4">
+            <h4 className="font-semibold text-base leading-6 text-[#1f2937]">
               Contact Us
             </h4>
-            <ul className="flex flex-col gap-[8px]">
-              <li className="flex items-center gap-[8px]">
+            <ul className="flex flex-col gap-2">
+              <li className="flex items-center gap-2">
                 <EmailIcon />
                 <Link
                   href="mailto:enquiry@aulax.app"
-                  className="font-normal text-[16px] leading-[24px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm md:text-base leading-6 text-[#4b5563] hover:text-[#1f2937] transition-colors break-all"
                 >
                   enquiry@aulax.app
                 </Link>
               </li>
-              <li className="flex items-center gap-[8px]">
+              <li className="flex items-center gap-2">
                 <LocationIcon />
-                <span className="font-normal text-[16px] leading-[24px] text-[#4b5563]">
+                <span className="font-normal text-sm md:text-base leading-6 text-[#4b5563]">
                   London, UK
                 </span>
               </li>
@@ -205,38 +205,43 @@ export default function Footer() {
           </div>
 
           {/* Follow us */}
-          <div className="w-[220.81px] flex flex-col gap-[16px]">
-            <h4 className="font-semibold text-[16px] leading-[24px] text-[#1f2937]">
+          <div className="flex flex-col gap-4 col-span-2 sm:col-span-1">
+            <h4 className="font-semibold text-base leading-6 text-[#1f2937]">
               Follow us
             </h4>
-            <div className="flex items-start gap-[16px]">
+            <div className="flex items-center gap-4 flex-wrap">
               <Link
                 href="#"
-                className="text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                className="text-[#4b5563] hover:text-[#1f2937] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label="Twitter"
               >
                 <TwitterIcon />
               </Link>
               <Link
                 href="#"
-                className="text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                className="text-[#4b5563] hover:text-[#1f2937] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label="Instagram"
               >
                 <InstagramIcon />
               </Link>
               <Link
                 href="#"
-                className="text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                className="text-[#4b5563] hover:text-[#1f2937] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label="Facebook"
               >
                 <FacebookIcon />
               </Link>
               <Link
                 href="#"
-                className="text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                className="text-[#4b5563] hover:text-[#1f2937] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label="LinkedIn"
               >
                 <LinkedInIcon />
               </Link>
               <Link
                 href="#"
-                className="text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                className="text-[#4b5563] hover:text-[#1f2937] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+                aria-label="YouTube"
               >
                 <YouTubeIcon />
               </Link>
@@ -245,32 +250,32 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#e5e7eb] pt-[33px]">
-          <div className="flex items-center justify-between">
+        <div className="border-t border-[#e5e7eb] pt-6 md:pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Left side */}
-            <div className="flex items-center">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link
                 href="/"
-                className="font-bold text-[24px] leading-[32px] text-[#1e293b]"
+                className="font-bold text-xl md:text-2xl leading-8 text-[#1e293b]"
               >
                 Aulax
               </Link>
-              <div className="flex items-center ml-[16px] gap-[16px]">
+              <div className="flex items-center gap-4 flex-wrap justify-center">
                 <Link
                   href="#"
-                  className="font-normal text-[14px] leading-[20px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm leading-5 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Legal
                 </Link>
                 <Link
                   href="#"
-                  className="font-normal text-[14px] leading-[20px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm leading-5 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   href="#"
-                  className="font-normal text-[14px] leading-[20px] text-[#4b5563] hover:text-[#1f2937] transition-colors"
+                  className="font-normal text-sm leading-5 text-[#4b5563] hover:text-[#1f2937] transition-colors"
                 >
                   Terms of Service
                 </Link>
@@ -278,7 +283,7 @@ export default function Footer() {
             </div>
 
             {/* Right side */}
-            <p className="font-normal text-[14px] leading-[20px] text-[#6b7280]">
+            <p className="font-normal text-sm leading-5 text-[#6b7280] text-center md:text-right">
               © 2026 Aulax. All rights reserved.
             </p>
           </div>

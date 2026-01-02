@@ -27,75 +27,75 @@ const GooglePlayIcon = () => (
 export default function VideoShowcaseSection() {
   return (
     <section
-      className="px-[80px] py-[96px] relative overflow-hidden"
+      className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-12 md:py-16 lg:py-24 relative overflow-hidden"
       style={{
         backgroundImage:
           "linear-gradient(143deg, rgba(30, 41, 59, 1) 0%, rgba(17, 24, 39, 1) 100%)",
       }}
     >
-      {/* Decorative blur circles */}
-      <div className="absolute top-[-192px] left-[-192px] w-[384px] h-[384px] rounded-full bg-[rgba(144,238,144,0.1)] blur-[32px]" />
-      <div className="absolute bottom-[-192px] right-[-192px] w-[384px] h-[384px] rounded-full bg-[rgba(207,250,254,0.1)] blur-[32px]" />
+      {/* Decorative blur circles - smaller on mobile */}
+      <div className="absolute top-[-96px] md:top-[-192px] left-[-96px] md:left-[-192px] w-48 md:w-96 h-48 md:h-96 rounded-full bg-[rgba(144,238,144,0.1)] blur-[32px]" />
+      <div className="absolute bottom-[-96px] md:bottom-[-192px] right-[-96px] md:right-[-192px] w-48 md:w-96 h-48 md:h-96 rounded-full bg-[rgba(207,250,254,0.1)] blur-[32px]" />
 
-      <div className="max-w-[1280px] mx-auto px-[24px] relative z-10">
+      <div className="max-w-[1280px] mx-auto relative z-10">
         {/* Header */}
-        <div className="flex flex-col gap-[16px] items-center mb-[48px]">
-          <h2 className="font-bold text-[48px] leading-[48px] text-white text-center">
+        <div className="flex flex-col gap-4 items-center mb-8 md:mb-12">
+          <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-white text-center">
             See Aulax in Action
           </h2>
-          <p className="font-normal text-[18px] leading-[28px] text-[#d1d5db] text-center max-w-[672px]">
+          <p className="font-normal text-base md:text-lg leading-7 text-[#d1d5db] text-center max-w-[672px] px-4">
             Experience the seamless shopping journey that connects you to your
             local marketplace
           </p>
         </div>
 
-        {/* Video Card */}
+        {/* Video Card - responsive width */}
         <div
-          className="w-[896px] mx-auto rounded-[24px] p-[32px] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]"
+          className="w-full max-w-[896px] mx-auto rounded-2xl lg:rounded-3xl p-4 sm:p-6 md:p-8 shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]"
           style={{
             backgroundImage:
               "linear-gradient(141deg, rgba(31, 41, 55, 1) 0%, rgba(17, 24, 39, 1) 100%)",
           }}
         >
           {/* Video Container */}
-          <div className="relative aspect-video bg-[#374151] rounded-[16px] overflow-hidden mb-[32px]">
+          <div className="relative aspect-video bg-[#374151] rounded-xl md:rounded-2xl overflow-hidden mb-6 md:mb-8">
             {/* Video placeholder */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#374151] to-[#1f2937] flex items-center justify-center">
-              <span className="text-white/30 text-[14px]">
+              <span className="text-white/30 text-sm">
                 App Demo Video Placeholder
               </span>
             </div>
 
             {/* Play button overlay */}
             <div className="absolute inset-0 bg-[rgba(0,0,0,0.3)] flex items-center justify-center">
-              <button className="w-[80px] h-[80px] rounded-full bg-[#90ee90] flex items-center justify-center shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] hover:bg-[#7de47d] transition-colors pl-[4px]">
+              <button className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[#90ee90] flex items-center justify-center shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] hover:bg-[#7de47d] transition-colors pl-1 min-h-[44px] min-w-[44px]">
                 <PlayIcon />
               </button>
             </div>
           </div>
 
           {/* Download Section */}
-          <div className="flex flex-col gap-[16px] items-center">
-            <h3 className="font-bold text-[24px] leading-[32px] text-white text-center">
+          <div className="flex flex-col gap-4 items-center">
+            <h3 className="font-bold text-xl md:text-2xl leading-8 text-white text-center">
               Download Aulax Today
             </h3>
-            <p className="font-normal text-[16px] leading-[24px] text-[#d1d5db] text-center">
+            <p className="font-normal text-sm md:text-base leading-6 text-[#d1d5db] text-center">
               Join thousands of shoppers discovering their local marketplace
             </p>
 
-            {/* App Store Buttons */}
-            <div className="flex items-center justify-center gap-[16px] pt-[8px]">
+            {/* App Store Buttons - stack on mobile */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
               {/* App Store */}
               <Link
                 href="#"
-                className="flex items-center bg-black px-[24px] py-[12px] rounded-[12px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-gray-900 transition-colors"
+                className="flex items-center justify-center bg-black px-5 md:px-6 py-3 rounded-xl shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-gray-900 transition-colors min-h-[44px] w-full sm:w-auto"
               >
                 <AppleIcon />
-                <div className="ml-[12px]">
-                  <p className="font-normal text-[12px] leading-[16px] text-white">
+                <div className="ml-3">
+                  <p className="font-normal text-[10px] sm:text-xs leading-4 text-white">
                     Download on the
                   </p>
-                  <p className="font-semibold text-[18px] leading-[28px] text-white">
+                  <p className="font-semibold text-base sm:text-lg leading-6 sm:leading-7 text-white">
                     App Store
                   </p>
                 </div>
@@ -104,14 +104,14 @@ export default function VideoShowcaseSection() {
               {/* Google Play */}
               <Link
                 href="#"
-                className="flex items-center bg-black px-[24px] py-[12px] rounded-[12px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-gray-900 transition-colors"
+                className="flex items-center justify-center bg-black px-5 md:px-6 py-3 rounded-xl shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-gray-900 transition-colors min-h-[44px] w-full sm:w-auto"
               >
                 <GooglePlayIcon />
-                <div className="ml-[12px]">
-                  <p className="font-normal text-[12px] leading-[16px] text-white">
+                <div className="ml-3">
+                  <p className="font-normal text-[10px] sm:text-xs leading-4 text-white">
                     GET IT ON
                   </p>
-                  <p className="font-semibold text-[18px] leading-[28px] text-white">
+                  <p className="font-semibold text-base sm:text-lg leading-6 sm:leading-7 text-white">
                     Google Play
                   </p>
                 </div>
@@ -123,4 +123,3 @@ export default function VideoShowcaseSection() {
     </section>
   );
 }
-
