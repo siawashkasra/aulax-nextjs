@@ -5,15 +5,18 @@ import Link from "next/link";
 
 // Hamburger menu icon
 const MenuIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
   </svg>
 );
 
 // Close icon
 const CloseIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.3 5.71a1 1 0 00-1.42 0L12 10.59 7.12 5.71a1 1 0 00-1.42 1.42L10.59 12l-4.89 4.88a1 1 0 001.42 1.42L12 13.41l4.88 4.89a1 1 0 001.42-1.42L13.41 12l4.89-4.88a1 1 0 000-1.41z" />
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
   </svg>
 );
 
@@ -44,131 +47,146 @@ export default function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[6px] bg-[rgba(255,255,255,0.8)] h-[72px] px-4 sm:px-6 md:px-8 lg:px-16 xl:px-[104px] py-4">
-      <div className="flex items-center justify-between h-10 max-w-[1280px] mx-auto">
-        {/* Left side - Logo and Navigation */}
-        <div className="flex items-center">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="font-bold text-xl sm:text-2xl leading-8 text-[#1e293b]"
-          >
-            Aulax
-          </Link>
+    <>
+      <header className="fixed top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-sm border-b border-gray-200 h-[72px]">
+        <div className="flex items-center justify-between h-full max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20">
+          {/* Left side - Logo */}
+          <div className="flex items-center flex-shrink-0">
+            <Link
+              href="/"
+              className="font-bold text-xl sm:text-2xl text-[#1e293b] hover:opacity-80 transition-opacity"
+            >
+              Aulax
+            </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center pl-8">
+            {/* Desktop Navigation - Hidden on mobile */}
+            <nav className="hidden lg:flex items-center ml-8 gap-1">
+              <Link
+                href="#"
+                className="px-4 py-2 text-sm font-medium text-[#374151] rounded-full hover:bg-gray-100 transition-colors"
+              >
+                Home
+              </Link>
+              <Link
+                href="#about"
+                className="px-4 py-2 text-sm font-medium text-[#374151] rounded-full hover:bg-gray-100 transition-colors"
+              >
+                About
+              </Link>
+              <Link
+                href="#why-aulax"
+                className="px-4 py-2 text-sm font-medium text-[#374151] rounded-full hover:bg-gray-100 transition-colors"
+              >
+                Why Aulax?
+              </Link>
+              <Link
+                href="#partner"
+                className="px-4 py-2 text-sm font-medium text-[#374151] rounded-full hover:bg-gray-100 transition-colors"
+              >
+                Become a Partner
+              </Link>
+              <Link
+                href="#partners"
+                className="px-4 py-2 text-sm font-medium text-[#374151] rounded-full hover:bg-gray-100 transition-colors"
+              >
+                Our Partners
+              </Link>
+            </nav>
+          </div>
+
+          {/* Right side - Desktop CTA and Mobile Menu Button */}
+          <div className="flex items-center gap-4">
+            {/* Desktop CTA Button - Hidden on mobile */}
             <Link
-              href="#"
-              className="px-3 py-2 text-sm font-medium leading-5 text-[#374151] rounded-full hover:bg-[rgba(0,0,0,0.05)] transition-colors"
+              href="#download"
+              className="hidden lg:flex items-center bg-[#006a4e] text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-[#005a42] transition-colors"
             >
-              Home
+              Download Aulax
             </Link>
-            <Link
-              href="#about"
-              className="ml-2 px-3 py-2 text-sm font-medium leading-5 text-[#374151] rounded-full hover:bg-[rgba(0,0,0,0.05)] transition-colors"
+
+            {/* Mobile Hamburger Menu Button - Visible on mobile/tablet */}
+            <button
+              type="button"
+              className="lg:hidden flex items-center justify-center w-10 h-10 text-[#1e293b] hover:bg-gray-100 active:bg-gray-200 rounded-lg transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
             >
-              About
-            </Link>
-            <Link
-              href="#why-aulax"
-              className="ml-2 px-3 py-2 text-sm font-medium leading-5 text-[#374151] rounded-full hover:bg-[rgba(0,0,0,0.05)] transition-colors"
-            >
-              Why Aulax?
-            </Link>
-            <Link
-              href="#partner"
-              className="ml-2 px-3 py-2 text-sm font-medium leading-5 text-[#374151] rounded-full hover:bg-[rgba(0,0,0,0.05)] transition-colors"
-            >
-              Become a Partner
-            </Link>
-            <Link
-              href="#partners"
-              className="ml-2 px-3 py-2 text-sm font-medium leading-5 text-[#374151] rounded-full hover:bg-[rgba(0,0,0,0.05)] transition-colors"
-            >
-              Our Partners
-            </Link>
-          </nav>
+              {isMenuOpen ? (
+                <CloseIcon />
+              ) : (
+                <MenuIcon />
+              )}
+            </button>
+          </div>
         </div>
-
-        {/* Desktop CTA Button */}
-        <Link
-          href="#download"
-          className="hidden lg:block bg-[#006a4e] text-white px-6 py-2.5 rounded-full text-sm font-medium leading-5 hover:bg-[#005a42] transition-colors"
-        >
-          Download Aulax
-        </Link>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#374151] hover:bg-[rgba(0,0,0,0.05)] rounded-full transition-colors"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isMenuOpen}
-        >
-          {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
-        </button>
-      </div>
+      </header>
 
       {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
-        <div
-          className="lg:hidden fixed inset-0 top-[72px] bg-black/20 z-40"
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
-
-      {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed top-[72px] left-0 right-0 bg-white shadow-lg border-t border-[#e5e7eb] z-50 transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? "translate-y-0" : "-translate-y-full pointer-events-none"
+        className={`lg:hidden fixed inset-0 top-[72px] bg-black/50 backdrop-blur-sm z-[90] transition-opacity duration-300 ${
+          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
+        onClick={() => setIsMenuOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* Mobile Menu - Slides down from top */}
+      <div
+        className={`lg:hidden fixed top-[72px] left-0 right-0 bg-white shadow-xl border-b border-gray-200 z-[95] transition-transform duration-300 ease-out overflow-hidden ${
+          isMenuOpen ? "translate-y-0" : "-translate-y-full"
+        }`}
+        aria-hidden={!isMenuOpen}
       >
-        <nav className="flex flex-col p-6 max-h-[calc(100vh-72px)] overflow-y-auto">
+        <nav className="flex flex-col py-2 max-h-[calc(100vh-72px)] overflow-y-auto">
           <Link
             href="#"
-            className="py-3 text-base font-medium text-[#374151] hover:text-[#006a4e] transition-colors min-h-[44px] flex items-center"
+            className="px-6 py-4 text-base font-medium text-[#374151] hover:bg-gray-50 hover:text-[#006a4e] active:bg-gray-100 transition-colors border-b border-gray-100"
             onClick={() => setIsMenuOpen(false)}
           >
             Home
           </Link>
           <Link
             href="#about"
-            className="py-3 text-base font-medium text-[#374151] hover:text-[#006a4e] transition-colors min-h-[44px] flex items-center"
+            className="px-6 py-4 text-base font-medium text-[#374151] hover:bg-gray-50 hover:text-[#006a4e] active:bg-gray-100 transition-colors border-b border-gray-100"
             onClick={() => setIsMenuOpen(false)}
           >
             About
           </Link>
           <Link
             href="#why-aulax"
-            className="py-3 text-base font-medium text-[#374151] hover:text-[#006a4e] transition-colors min-h-[44px] flex items-center"
+            className="px-6 py-4 text-base font-medium text-[#374151] hover:bg-gray-50 hover:text-[#006a4e] active:bg-gray-100 transition-colors border-b border-gray-100"
             onClick={() => setIsMenuOpen(false)}
           >
             Why Aulax?
           </Link>
           <Link
             href="#partner"
-            className="py-3 text-base font-medium text-[#374151] hover:text-[#006a4e] transition-colors min-h-[44px] flex items-center"
+            className="px-6 py-4 text-base font-medium text-[#374151] hover:bg-gray-50 hover:text-[#006a4e] active:bg-gray-100 transition-colors border-b border-gray-100"
             onClick={() => setIsMenuOpen(false)}
           >
             Become a Partner
           </Link>
           <Link
             href="#partners"
-            className="py-3 text-base font-medium text-[#374151] hover:text-[#006a4e] transition-colors min-h-[44px] flex items-center"
+            className="px-6 py-4 text-base font-medium text-[#374151] hover:bg-gray-50 hover:text-[#006a4e] active:bg-gray-100 transition-colors border-b border-gray-100"
             onClick={() => setIsMenuOpen(false)}
           >
             Our Partners
           </Link>
-          <Link
-            href="#download"
-            className="mt-4 bg-[#006a4e] text-white px-6 py-3 rounded-full text-base font-medium text-center hover:bg-[#005a42] transition-colors min-h-[44px] flex items-center justify-center"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Download Aulax
-          </Link>
+          
+          {/* Download Aulax Button - At the end of mobile menu */}
+          <div className="px-6 py-4 mt-2">
+            <Link
+              href="#download"
+              className="w-full flex items-center justify-center bg-[#006a4e] text-white px-6 py-3.5 rounded-full text-base font-semibold hover:bg-[#005a42] active:bg-[#004a35] transition-colors shadow-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Download Aulax
+            </Link>
+          </div>
         </nav>
       </div>
-    </header>
+    </>
   );
 }
